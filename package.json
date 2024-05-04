@@ -24,6 +24,7 @@
     "@libsql/client": "^0.6.0",
     "@next/env": "^14.2.3",
     "@t3-oss/env-nextjs": "^0.10.1",
+    "@tailwindcss/typography": "^0.5.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
