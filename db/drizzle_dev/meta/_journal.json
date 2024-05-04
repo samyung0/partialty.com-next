@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714790260844,
+      "tag": "0000_bumpy_mongu",
+      "breakpoints": true
+    }
+  ]
+}
