@@ -1,3 +1,5 @@
+import { ClientAuthContext } from "~/context/ClientAuthContext";
+import { ThemeProvider } from "~/context/ThemeContext";
 import "~/styles/globals.css";
 
 export const metadata = {
@@ -13,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-background-light-gray dark:bg-primary-dark-gray transition-colors">
+        <ClientAuthContext>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
+        </ClientAuthContext>
+      </body>
     </html>
   );
 }
