@@ -1,5 +1,5 @@
 import { InferInsertModel, InferSelectModel, sql } from 'drizzle-orm';
-import { blob, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { blob, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { profiles } from './profiles';
 
 export const user_session = sqliteTable('user_session', {
@@ -14,6 +14,7 @@ export const user_session = sqliteTable('user_session', {
   idle_expires: blob('idle_expires', {
     mode: 'bigint',
   }).notNull(),
+  expires_at: integer("expires_at")
 });
 
 export type User_session = InferSelectModel<typeof user_session>;

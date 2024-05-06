@@ -20,6 +20,7 @@ export const profiles = sqliteTable('profiles', {
   accessible_courses_read: text('accessible_courses_read'),
   github_installation_id: text('github_installation_id'),
   favourite_courses: blob('favourite_courses', { mode: 'json' }).$type<string[]>(),
+  password: text("password")
 });
 
 export type Profiles = InferSelectModel<typeof profiles>;
