@@ -18,6 +18,7 @@ const config = {
     "@typescript-eslint/no-unsafe-call": "warn",
     "@typescript-eslint/no-unsafe-member-access": "warn",
     "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {

@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
-import { getUser } from "~/auth/getUser";
+import { getUser } from "~/server/profiles";
 import { User } from "~/definition/auth";
 
 interface UserInteraface {

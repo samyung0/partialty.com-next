@@ -1,4 +1,7 @@
+import { NewProfile } from "db/schema/profiles";
 import { lucia } from "~/auth/lucia";
 
-export type Session = Awaited<ReturnType<typeof lucia.validateSession>>
-export type User = Session["user"]
+type SessionObj = Awaited<ReturnType<typeof lucia.validateSession>>
+export type User = SessionObj["user"]
+export type Session = SessionObj["session"]
+export type NewUser = NewProfile;

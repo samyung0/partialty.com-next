@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-background-light-gray dark:bg-primary-dark-gray transition-colors">
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-background-light-gray text-primary-dark-gray transition-colors dark:bg-primary-dark-gray  dark:text-background-light-gray">
         <ClientAuthContext>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}

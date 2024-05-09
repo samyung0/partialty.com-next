@@ -3,8 +3,8 @@ import { Lucia, TimeSpan } from "lucia";
 import { LibSQLAdapter } from "@lucia-auth/adapter-sqlite";
 import { client } from "~/server/db";
 
-import { type NewProfile } from "db/schema/profiles";
-import { type New_user_session } from "db/schema/user_session";
+import { Profiles, type NewProfile } from "db/schema/profiles";
+import { User_session, type New_user_session } from "db/schema/user_session";
 
 const adapter = new LibSQLAdapter(client, {
   user: "profiles",
@@ -50,7 +50,7 @@ export const github = new GitHub(
     redirectURI:
       process.env.NODE_ENV === "production"
         ? "https://www.partialty.com/login/github/callback/"
-        : "http://localhost:5173/login/github/callback/",
+        : "http://localhost:3000/login/github/callback/",
   },
 );
 
@@ -59,32 +59,8 @@ export const google = new Google(
   process.env.GOOGLE_SECRET!,
   process.env.NODE_ENV === "production"
     ? "https://www.partialty.com/login/google/callback/"
-    : "http://localhost:5173/login/google/callback/",
+    : "http://localhost:3000/login/google/callback/",
 );
-
-// export const githubAuth = (env: RequestEvent["env"]) => {
-//   return google(lucia, {
-//     clientId: env.get("GOOGLE_ID")!,
-//     clientSecret: env.get("GOOGLE_SECRET")!,
-//     scope: ["email"],
-//     redirectUri:
-//       import.meta.env.MODE === "production"
-//         ? "https://www.partialty.com/login/google/callback/"
-//         : "http://localhost:5173/login/google/callback/",
-//   });
-// };
-
-// export const googleAuth = (env: RequestEvent["env"]) => {
-//   return github(lucia, {
-//     clientId: env.get("GITHUB_ID")!,
-//     clientSecret: env.get("GITHUB_SECRET")!,
-//     scope: ["user"],
-//     redirectUri:
-//       import.meta.env.MODE === "production"
-//         ? "https://www.partialty.com/login/github/callback/"
-//         : "http://localhost:5173/login/github/callback/",
-//   });
-// };
 
 declare module "lucia" {
   interface Register {

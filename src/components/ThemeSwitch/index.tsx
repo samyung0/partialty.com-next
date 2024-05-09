@@ -1,12 +1,11 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { Switch } from "../Switch";
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
 
 export const ThemeSwitch = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   return (
     <div>
       <label className="flex items-center gap-2 text-primary-dark-gray dark:text-background-light-gray">
@@ -15,7 +14,7 @@ export const ThemeSwitch = () => {
           onChange={(e) => {
             setTheme(e.target.checked ? "dark" : "light")
           }}
-          checked={theme === "dark"}
+          checked={resolvedTheme === "dark"}
           type="checkbox"
           className="peer sr-only"
         ></input>
