@@ -2,7 +2,8 @@
 import { FollowerPointerCard } from "~/components/FollowingPointer";
 import HeroText from "./HeroText";
 import AnimateHeroText from "./AnimateHeroText";
-
+import Phaser from "./Phaser";
+import { Suspense } from "react";
 export default function Hero() {
   // const parentEl = useRef<HTMLDivElement>(null);
 
@@ -14,6 +15,9 @@ export default function Hero() {
             <AnimateHeroText HeroText={<HeroText />} />
           </div>
         </FollowerPointerCard>
+      </div>
+      <div className="absolute inset-0 z-10">
+        <Phaser />
       </div>
       {/* <div
         // ref={parentEl}
