@@ -40,7 +40,7 @@ const FormButton = ({ pending }: { pending: boolean }) => {
   );
 };
 
-export function LoginForm() {
+export default function LoginForm() {
   const firstField = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [formState, setFormState] = useState<LoginFormState>(undefined);

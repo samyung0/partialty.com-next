@@ -3,13 +3,7 @@
 import { AlignJustify } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ComponentType,
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useState,
-} from "react";
+import { useState } from "react";
 import { SideNav } from "./SideNav";
 
 export const SmallNav = ({

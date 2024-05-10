@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LoginForm } from "./LoginForm";
+import LoginForm from "./LoginForm";
 import { Separator } from "~/components/Separator";
 
 export const LoginPage = () => {

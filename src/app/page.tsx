@@ -1,6 +1,6 @@
 import { Footer } from "~/components/Footer";
 import { PublicNav } from "~/components/Nav/PublicNav";
-import Hero from "~/containers/LandingPage/Hero";
+import Hero from "~/containers/LandingPage";
 
 export default function HomePage() {
   return (

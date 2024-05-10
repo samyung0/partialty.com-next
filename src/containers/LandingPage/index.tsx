@@ -1,6 +1,7 @@
 // import { useRef } from "react";
 import { FollowerPointerCard } from "~/components/FollowingPointer";
 import HeroText from "./HeroText";
+import AnimateHeroText from "./AnimateHeroText";
 
 export default function Hero() {
   // const parentEl = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ export default function Hero() {
       <div className="absolute left-[50%] top-[50%] z-[50] translate-x-[-50%] translate-y-[-50%]">
         <FollowerPointerCard className="relative h-full" title="Partialty.com">
           <div>
-            <HeroText />
+            <AnimateHeroText HeroText={<HeroText />} />
           </div>
         </FollowerPointerCard>
       </div>
