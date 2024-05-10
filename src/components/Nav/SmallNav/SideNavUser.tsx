@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Separator } from "~/components/Divider";
+import { Separator } from "~/components/Separator"
 import { getUser } from "~/auth/getUser";
 import { LogoutButtonSideNav } from "./LogoutButtonSideNav";
 

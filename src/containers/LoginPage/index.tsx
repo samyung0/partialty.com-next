@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LoginForm } from "./LoginForm";
+import { Separator } from "~/components/Separator";
 
 export const LoginPage = () => {
   return (
@@ -15,9 +16,9 @@ export const LoginPage = () => {
           <LoginForm />
 
           <div className="relative mx-auto my-8 mb-4 flex items-center self-stretch md:my-10 md:mb-6">
-            <span className="inline-block h-[3px] flex-1 bg-black/10 dark:bg-gray-300"></span>
+            <Separator className="shrink" />
             <span className="px-4 tracking-wide">or</span>
-            <span className="inline-block h-[3px] flex-1 bg-black/10 dark:bg-gray-300"></span>
+            <Separator className="shrink"/>
           </div>
 
           <div className="mx-auto flex w-[60%] items-center justify-evenly self-stretch md:w-full">
@@ -53,7 +54,7 @@ export const LoginPage = () => {
             <Link
               prefetch
               href="/signup/"
-              className="inline-block text-sm underline decoration-wavy underline-offset-[6px]"
+              className="inline-block text-sm underline underline-offset-[6px]"
             >
               New User? Click Here to Sign up
             </Link>
