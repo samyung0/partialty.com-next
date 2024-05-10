@@ -8,7 +8,7 @@ export const ThemeSwitch = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   return (
     <div>
-      <label className="flex items-center gap-2 text-primary-dark-gray dark:text-background-light-gray">
+      <label className="flex items-center gap-2 text-primary-dark-gray dark:text-background-light-gray cursor-pointer">
         <Sun className="size-[18px]" />
         <input
           onChange={(e) => {

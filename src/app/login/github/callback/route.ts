@@ -6,22 +6,8 @@ import { db } from "~/server/db";
 import { profiles } from "db/schema/profiles";
 import { eq, and } from "drizzle-orm";
 import { NewUser, Session, User } from "~/definition/auth";
-
-const setSession = async (id: string) => {
-  const session = await lucia.createSession(id, {
-    user_id: id,
-
-    // not used, result of lucia auth v2
-    active_expires: 0n,
-    idle_expires: 0n,
-  });
-  const sessionCookie = lucia.createSessionCookie(session.id);
-  cookies().set(
-    sessionCookie.name,
-    sessionCookie.value,
-    sessionCookie.attributes,
-  );
-}
+import { NextResponse } from "next/server";
+import { setSession } from "~/auth/setSession";
 
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url);
@@ -29,9 +15,12 @@ export async function GET(request: Request): Promise<Response> {
   const state = url.searchParams.get("state");
   const storedState = cookies().get("github_oauth_state")?.value ?? null;
   if (!code || !state || !storedState || state !== storedState) {
-    return new Response(null, {
-      status: 400,
-    });
+    const url = new URL("/login", request.url);
+    url.searchParams.set(
+      "error",
+      "Oauth Error! Invalid state. Please try logging in again",
+    );
+    return Response.redirect(url);
   }
 
   try {
@@ -102,12 +91,12 @@ export async function GET(request: Request): Promise<Response> {
             .set({ github_id: String(githubUser.id) })
             .where(eq(profiles.id, existingDatabaseUserWithEmail[0]!.id));
           await setSession(existingDatabaseUserWithEmail[0]!.id);
-          return new Response(null, {
-            status: 302,
-            headers: {
-              Location: "/",
-            },
-          });
+          const url = new URL("/", request.url);
+          url.searchParams.set(
+            "action",
+            "Linked to account with email " + primaryEmail.email,
+          );
+          return Response.redirect(url);
         } else {
           attributes.email = primaryEmail.email;
           attributes.email_verified = true;
@@ -124,16 +113,24 @@ export async function GET(request: Request): Promise<Response> {
       },
     });
   } catch (e) {
+    const url = new URL("/login", request.url);
+    url.searchParams.set(
+      "error",
+      `Oauth Error! ${(e as any).toString()} Please try logging in again`,
+    );
+    return Response.redirect(url);
     // the specific error message depends on the provider
-    if (e instanceof OAuth2RequestError) {
-      // invalid code
-      return new Response(null, {
-        status: 400,
-      });
-    }
-    return new Response(null, {
-      status: 500,
-    });
+    // if (e instanceof OAuth2RequestError) {
+    //   // invalid code
+    //   throw new Error(e.toString());
+    //   // return new Response(null, {
+    //   //   status: 400,
+    //   // });
+    // }
+    // throw new Error(e);
+    // return new Response(null, {
+    //   status: 500,
+    // });
   }
 }
 

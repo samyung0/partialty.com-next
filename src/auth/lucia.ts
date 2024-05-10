@@ -50,7 +50,7 @@ export const github = new GitHub(
     redirectURI:
       process.env.NODE_ENV === "production"
         ? "https://www.partialty.com/login/github/callback/"
-        : "http://localhost:3000/login/github/callback/",
+        : "http://localhost:3000/login/github/callback",
   },
 );
 
@@ -59,7 +59,7 @@ export const google = new Google(
   process.env.GOOGLE_SECRET!,
   process.env.NODE_ENV === "production"
     ? "https://www.partialty.com/login/google/callback/"
-    : "http://localhost:3000/login/google/callback/",
+    : "http://localhost:3000/login/google/callback",
 );
 
 declare module "lucia" {
