@@ -1,7 +1,9 @@
+import { Loader } from "~/components/Loader";
+
 export default function Loading() {
   return (
-    <div>
-      Loading
+    <div className="flex items-center justify-center">
+      <Loader />
     </div>
-  )
+  );
 }

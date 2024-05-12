@@ -40,11 +40,11 @@ const faqs = [
   },
 ];
 
-export default function FAQPage({ topButton }: { topButton: boolean }) {
+export default function FAQPage({ topButton, buttonAction }: { topButton: boolean, buttonAction: () => any }) {
   return (
     <div className="relative overflow-x-hidden">
       <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-        {topButton && <TopButton />}
+        {topButton && <TopButton buttonAction={buttonAction} />}
         <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
           <div className="flex justify-center">
             <div className="relative inline-block overflow-visible">

@@ -2,16 +2,13 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useAnimate } from "framer-motion";
+import SecondHalfContainer from "./SecondHalfContainer";
 
 interface LandingPageProps {
   HeroContainer: React.ReactNode;
-  SecondHalfContainer: React.ReactNode;
 }
 
-export default function LandingPage({
-  HeroContainer,
-  SecondHalfContainer,
-}: LandingPageProps) {
+export default function LandingPage({ HeroContainer }: LandingPageProps) {
   const [scope, animate] = useAnimate();
   const animation = useCallback(
     (translateY: string) => {
@@ -20,7 +17,7 @@ export default function LandingPage({
         { translateY: translateY },
         {
           duration: 0.5,
-          type: "spring"
+          type: "spring",
         },
       );
     },
@@ -116,7 +113,7 @@ export default function LandingPage({
     >
       {HeroContainer}
       <div ref={secondHalfOfPage} className="max-h-[100dvh] overflow-auto">
-        {SecondHalfContainer}
+        <SecondHalfContainer setPage={() => setPage(0)} />
       </div>
     </div>
   );
