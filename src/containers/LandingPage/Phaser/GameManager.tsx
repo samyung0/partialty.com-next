@@ -4,12 +4,14 @@ import type Phaser from "phaser";
 import {
   forwardRef,
   useRef,
-  useLayoutEffect,
   useEffect,
   useState,
   useCallback,
+  Dispatch,
+  SetStateAction,
 } from "react";
 import { useDebouncedCallback } from "use-debounce";
+import { SpriteProps } from "../Hero";
 
 export interface IRefPhaserGame {
   game: Phaser.Game | null;
@@ -18,10 +20,11 @@ export interface IRefPhaserGame {
 
 interface IProps {
   currentActiveScene?: (scene_instance: Phaser.Scene) => void;
+  setSprite: Dispatch<SetStateAction<SpriteProps>>;
 }
 
 export default forwardRef<IRefPhaserGame, IProps>(function PhaserGame(
-  { currentActiveScene },
+  { currentActiveScene, setSprite },
   ref,
 ) {
   const [game, setGame] = useState<Phaser.Game | null>(null);
@@ -252,6 +255,11 @@ export default forwardRef<IRefPhaserGame, IProps>(function PhaserGame(
               .setInteractive(),
           );
         }
+        setSprite({
+          largeSprite: this.largeSprite,
+          mediumSprite: this.mediumSprite,
+          smallSprite: this.smallSprite
+        })
         this.largeSprite.forEach((sprite) => {
           if (!sprite) return;
           this.input.setDraggable(sprite, true);
@@ -317,7 +325,7 @@ export default forwardRef<IRefPhaserGame, IProps>(function PhaserGame(
       }
 
       update() {
-        const loop = this.sys.game.loop;
+        // const loop = this.sys.game.loop;
         if (this.gameObject) {
           this.gameObject.x = this.dragX;
           this.gameObject.y = this.dragY;
@@ -354,7 +362,7 @@ export default forwardRef<IRefPhaserGame, IProps>(function PhaserGame(
   }, [events, ref]);
 
   useEffect(() => {
-    if(loadedScript) return;
+    if (loadedScript) return;
     setLoadedScript(true);
     console.log("load phaser");
     const script = document.createElement("script");
