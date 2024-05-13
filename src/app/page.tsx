@@ -3,7 +3,7 @@ import HeroContainer from "~/containers/LandingPage/HeroContainer";
 
 const page = () => {
   return (
-    <main className="relative max-h-[100dvh] overflow-hidden">
+    <main id="main" className="relative max-h-[100dvh] overflow-hidden">
       <LandingPage HeroContainer={<HeroContainer />} />
     </main>
   );

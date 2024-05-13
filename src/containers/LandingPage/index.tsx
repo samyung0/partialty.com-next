@@ -111,8 +111,25 @@ export default function LandingPage({ HeroContainer }: LandingPageProps) {
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
     >
-      {HeroContainer}
-      <div ref={secondHalfOfPage} className="max-h-[100dvh] overflow-auto">
+      <div
+        onFocus={() => {
+          const main = document.getElementById("main");
+          if (main) document.getElementById("main")!.scrollTop = 0;
+          if (secondHalfOfPage.current) secondHalfOfPage.current.scrollTop = 0;
+          logic(-1);
+        }}
+      >
+        {HeroContainer}
+      </div>
+      <div
+        ref={secondHalfOfPage}
+        onFocus={() => {
+          const main = document.getElementById("main");
+          if (main) document.getElementById("main")!.scrollTop = 0;
+          logic(1);
+        }}
+        className="max-h-[100dvh] overflow-auto"
+      >
         <SecondHalfContainer setPage={() => setPage(0)} />
       </div>
     </div>
