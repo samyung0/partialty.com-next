@@ -1,5 +1,4 @@
-import { Toaster } from "sonner";
-import { ClientAuthContext } from "~/context/ClientAuthContext";
+import { Toaster } from "~/components/Sonner";
 import { ThemeProvider } from "~/context/ThemeContext";
 import "~/styles/globals.css";
 
