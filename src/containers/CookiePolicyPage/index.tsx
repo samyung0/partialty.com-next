@@ -4,7 +4,7 @@ export default function CookiePolicyPage() {
         <div>
           <strong>
             <span>
-              <h1 class="font-mosk" data-custom-class="title">COOKIE POLICY</h1>
+              <h1 className="font-mosk" data-custom-class="title">COOKIE POLICY</h1>
             </span>
           </strong>
         </div>

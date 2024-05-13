@@ -4,22 +4,20 @@ export default function TermsPage() {
       <div data-custom-class="body">
         <div>
           <div data-custom-class="title">
-            <bdt>
-              <span></span>
-            </bdt>
-            <bdt>
-              <h1 class="font-mosk">TERMS AND CONDITIONS</h1>
-            </bdt>
-            <bdt></bdt>
+            
+            <span>
+              <h1 className="font-mosk">TERMS AND CONDITIONS</h1>
+            </span>
+            
           </div>
           <div>
             <br />
           </div>
           <div data-custom-class="subtitle">
             <strong>Last updated</strong>{" "}
-            <bdt>
+            <span>
               <strong>April 28, 2024</strong>
-            </bdt>
+            </span>
           </div>
           <div>
             <br />
@@ -50,23 +48,23 @@ export default function TermsPage() {
           <div data-custom-class="body_text">
             <span>
               We are{" "}
-              <bdt
+              <span
                 data-id="9d459c4e-c548-e5cb-7729-a118548965d2"
                 data-type="question"
               >
                 Patialty.com, Inc.
-              </bdt>
-              <bdt></bdt> (<bdt></bdt>'<strong>Company</strong>', '
+              </span>
+               ('<strong>Company</strong>', '
               <strong>we</strong>', '<strong>us</strong>', or '
-              <strong>our</strong>'<bdt></bdt>)
+              <strong>our</strong>')
               <span>
                 <span>
                   <span>
-                    <bdt>
-                      <bdt>.</bdt>
-                    </bdt>
+                    <span>
+                      <span>.</span>
+                    </span>
                   </span>
-                  <bdt></bdt>
+                  
                 </span>
               </span>
             </span>
@@ -78,9 +76,9 @@ export default function TermsPage() {
         <div>
           <div data-custom-class="body_text">
             <span>
-              We operate <bdt></bdt>the website{" "}
+              We operate the website{" "}
               <span>
-                <bdt>
+                <span>
                   <a
                     href="https://www.partialty.com"
                     target="_blank"
@@ -88,13 +86,13 @@ export default function TermsPage() {
                   >
                     https://www.partialty.com
                   </a>
-                </bdt>
+                </span>
               </span>{" "}
-              (the <bdt></bdt>'<strong>Site</strong>'<bdt></bdt>)<bdt></bdt>
-              <bdt></bdt>, as well as any other related products and services
-              that refer or link to these legal terms (the <bdt></bdt>'
-              <strong>Legal Terms</strong>'<bdt></bdt>) (collectively, the{" "}
-              <bdt></bdt>'<strong>Services</strong>'<bdt></bdt>).<bdt></bdt>
+              (the '<strong>Site</strong>')
+              , as well as any other related products and services
+              that refer or link to these legal terms (the '
+              <strong>Legal Terms</strong>') (collectively, the{" "}
+              '<strong>Services</strong>').
             </span>
           </div>
           <div>
@@ -103,9 +101,9 @@ export default function TermsPage() {
           <div data-custom-class="body_text">
             <span>
               You can contact us by{" "}
-              <bdt>
-                email at <bdt>customer@partialty.com</bdt>
-              </bdt>
+              <span>
+                email at <span>customer@partialty.com</span>
+              </span>
             </span>
           </div>
           <div>
@@ -115,14 +113,14 @@ export default function TermsPage() {
             <span>
               These Legal Terms constitute a legally binding agreement made
               between you, whether personally or on behalf of an entity (
-              <bdt></bdt>'<strong>y</strong>
-              <strong>ou</strong>'<bdt></bdt>), and{" "}
-              <bdt>Patialty.com, Inc.</bdt>, concerning your access to and use
+              '<strong>y</strong>
+              <strong>ou</strong>'), and{" "}
+              <span>Patialty.com, Inc.</span>, concerning your access to and use
               of the Services. You agree that by accessing the Services, you
               have read, understood, and agreed to be bound by all of these
               Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS,
               THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU
-              MUST DISCONTINUE USE IMMEDIATELY.<bdt></bdt>
+              MUST DISCONTINUE USE IMMEDIATELY.
             </span>
           </div>
           <div>
@@ -134,9 +132,9 @@ export default function TermsPage() {
               on the Services from time to time are hereby expressly
               incorporated herein by reference. We reserve the right, in our
               sole discretion, to make changes or modifications to these Legal
-              Terms <bdt></bdt>from time to time
-              <bdt></bdt>. We will alert you about any changes by updating the{" "}
-              <bdt></bdt>'Last updated'<bdt></bdt> date of these Legal Terms,
+              Terms from time to time
+              . We will alert you about any changes by updating the{" "}
+              'Last updated' date of these Legal Terms,
               and you waive any right to receive specific notice of each such
               change. It is your responsibility to periodically review these
               Legal Terms to stay informed of updates. You will be subject to,
@@ -144,7 +142,7 @@ export default function TermsPage() {
               accepted, the changes in any revised Legal Terms by your continued
               use of the Services after the date such revised Legal Terms are
               posted.
-              <bdt></bdt>
+              
             </span>
           </div>
         </div>
@@ -153,17 +151,17 @@ export default function TermsPage() {
         </div>
         <div>
           <div data-custom-class="body_text">
-            <bdt data-type="if" id="a2595956-7028-dbe5-123e-d3d3a93ed076">
-              <bdt data-type="conditional-block">
-                <bdt data-type="body">
+            <span data-type="if" id="a2595956-7028-dbe5-123e-d3d3a93ed076">
+              <span data-type="conditional-block">
+                <span data-type="body">
                   <span>
-                    <bdt></bdt>
-                    <bdt
+                    
+                    <span
                       data-type="if"
                       id="a2595956-7028-dbe5-123e-d3d3a93ed076"
                     >
-                      <bdt data-type="conditional-block">
-                        <bdt data-type="body">
+                      <span data-type="conditional-block">
+                        <span data-type="body">
                           <span>
                             All users who are minors in the jurisdiction in
                             which they reside (generally under the age of 18)
@@ -173,14 +171,14 @@ export default function TermsPage() {
                             parent or guardian read and agree to these Legal
                             Terms prior to you using the Services.
                           </span>
-                        </bdt>
-                      </bdt>
-                    </bdt>
+                        </span>
+                      </span>
+                    </span>
                   </span>
-                </bdt>
-              </bdt>
-              <bdt data-type="close"></bdt>
-            </bdt>
+                </span>
+              </span>
+              <span data-type="close"></span>
+            </span>
           </div>
           <div>
             <br />
@@ -232,7 +230,7 @@ export default function TermsPage() {
           <div>
             <span>
               <span data-custom-class="body_text">
-                <bdt></bdt>
+                
               </span>
             </span>
             <a data-custom-class="link" href="#userreg">
@@ -242,7 +240,7 @@ export default function TermsPage() {
             </a>
             <span>
               <span data-custom-class="body_text">
-                <bdt></bdt>
+                
               </span>
             </span>{" "}
             <a data-custom-class="link" href="#products"></a>
@@ -251,9 +249,9 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#products">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
-                  <bdt></bdt>
-                  <bdt></bdt>
+                  
+                  
+                  
                 </span>
               </span>
             </a>{" "}
@@ -263,20 +261,18 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#purchases">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
+                  
                 </span>
               </span>
             </a>
           </div>
           <div>
-            <bdt>
-              <span></span>
-            </bdt>
+            
           </div>
           <div>
             <span>
               <span data-custom-class="body_text">
-                <bdt></bdt>
+                
               </span>
             </span>{" "}
             <a data-custom-class="link" href="#software"></a>{" "}
@@ -286,7 +282,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#software">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
+                  
                 </span>
               </span>
             </a>{" "}
@@ -316,7 +312,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#license">
               <span>
                 <span data-custom-class="body_text">
-                  7. CONTRIBUTION <bdt></bdt>LICENCE<bdt></bdt>
+                  7. CONTRIBUTION LICENCE
                 </span>
               </span>
             </a>{" "}
@@ -326,7 +322,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#reviews">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
+                  
                 </span>
               </span>
             </a>{" "}
@@ -336,7 +332,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#mobile">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
+                  
                 </span>
               </span>
             </a>{" "}
@@ -346,7 +342,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#socialmedia">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>8. SOCIAL MEDIA<bdt></bdt>
+                  8. SOCIAL MEDIA
                 </span>
               </span>
             </a>{" "}
@@ -356,8 +352,8 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#thirdparty">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>9. THIRD-PARTY WEBSITES AND CONTENT
-                  <bdt></bdt>
+                  9. THIRD-PARTY WEBSITES AND CONTENT
+                  
                 </span>
               </span>
             </a>{" "}
@@ -367,7 +363,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#advertisers">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
+                  
                 </span>
               </span>
             </a>{" "}
@@ -387,7 +383,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#ppyes">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>11. PRIVACY POLICY<bdt></bdt>
+                  11. PRIVACY POLICY
                 </span>
               </span>
             </a>{" "}
@@ -397,7 +393,7 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#ppno">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
+                  
                 </span>
               </span>
             </a>{" "}
@@ -407,9 +403,9 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#dmca">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>
-                  <bdt></bdt>
-                  <bdt></bdt>
+                  
+                  
+                  
                 </span>
               </span>
             </a>
@@ -417,9 +413,9 @@ export default function TermsPage() {
           <div>
             <span>
               <span data-custom-class="body_text">
-                <bdt></bdt>
-                <bdt></bdt>
-                <bdt></bdt>
+                
+                
+                
               </span>
             </span>{" "}
             <a data-custom-class="link" href="#terms"></a>
@@ -515,16 +511,14 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#california"></a>
           </div>
           <div>
-            <bdt>
-              <span></span>
-            </bdt>
+            
           </div>
           <div>
             <a data-custom-class="link" href="#california">
               <span>
                 <span data-custom-class="body_text">
-                  <bdt></bdt>22. CALIFORNIA USERS AND RESIDENTS
-                  <bdt></bdt>
+                  22. CALIFORNIA USERS AND RESIDENTS
+                  
                 </span>
               </span>
             </a>{" "}
@@ -539,34 +533,34 @@ export default function TermsPage() {
             <a data-custom-class="link" href="#contact"></a>
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
-            <bdt></bdt>
+            
           </div>
           <div>
             <a data-custom-class="link" href="#contact">
@@ -602,11 +596,9 @@ export default function TermsPage() {
               Accordingly, those persons who choose to access the Services from
               other locations do so on their own initiative and are solely
               responsible for compliance with local laws, if and to the extent
-              local laws are applicable.<bdt></bdt>
+              local laws are applicable.
             </span>
-            <bdt>
-              <span></span>
-            </bdt>
+            
           </div>
           <div>
             <br />
@@ -619,8 +611,8 @@ export default function TermsPage() {
               etc.), so if your interactions would be subjected to such laws,
               you may not use the Services. You may not use the Services in a
               way that would violate the Gramm-Leach-Bliley Act (GLBA).
-              <bdt></bdt>
-              <bdt></bdt>
+              
+              
             </span>
           </div>
           <div>
@@ -648,10 +640,10 @@ export default function TermsPage() {
               rights in our Services, including all source code, databases,
               functionality, software, website designs, audio, video, text,
               photographs, and graphics in the Services (collectively, the{" "}
-              <bdt></bdt>'Content'
-              <bdt></bdt>), as well as the trademarks, service marks, and logos
-              contained therein (the <bdt></bdt>
-              'Marks'<bdt></bdt>).
+              'Content'
+              ), as well as the trademarks, service marks, and logos
+              contained therein (the 
+              'Marks').
             </span>
           </div>
           <div>
@@ -671,9 +663,9 @@ export default function TermsPage() {
           <div data-custom-class="body_text">
             <span>
               The Content and Marks are provided in or through the Services{" "}
-              <bdt></bdt>'AS IS'
-              <bdt></bdt> for your <bdt></bdt>personal, non-commercial use or
-              internal business purpose<bdt></bdt> only.
+              'AS IS'
+               for your personal, non-commercial use or
+              internal business purpose only.
             </span>
           </div>
           <div>
@@ -688,15 +680,15 @@ export default function TermsPage() {
           <div data-custom-class="body_text">
             <span>
               Subject to your compliance with these Legal Terms, including the{" "}
-              <bdt></bdt>'<bdt></bdt>
+              '
             </span>
             <a data-custom-class="link" href="#prohibited">
               <span>PROHIBITED ACTIVITIES</span>
             </a>
             <span>
-              <bdt></bdt>'<bdt></bdt> section below, we grant you a
-              non-exclusive, non-transferable, revocable <bdt></bdt>licence
-              <bdt></bdt> to:
+              ' section below, we grant you a
+              non-exclusive, non-transferable, revocable licence
+               to:
             </span>
           </div>
           <ul>
@@ -712,8 +704,8 @@ export default function TermsPage() {
           </ul>
           <div data-custom-class="body_text">
             <span>
-              solely for your <bdt></bdt>personal, non-commercial use or
-              internal business purpose<bdt></bdt>.
+              solely for your personal, non-commercial use or
+              internal business purpose.
             </span>
           </div>
           <div>
@@ -737,7 +729,7 @@ export default function TermsPage() {
               If you wish to make any use of the Services, Content, or Marks
               other than as set out in this section or elsewhere in our Legal
               Terms, please address your request to:{" "}
-              <bdt>customer@partialty.com</bdt>. If we ever grant you the
+              <span>customer@partialty.com</span>. If we ever grant you the
               permission to post, reproduce, or publicly display any part of our
               Services or Content, you must identify us as the owners or
               licensors of the Services, Content, or Marks and ensure that any
@@ -772,7 +764,7 @@ export default function TermsPage() {
           <div data-custom-class="heading_2">
             <span>
               <strong>
-                Your submissions<bdt></bdt>
+                Your submissions
               </strong>
             </span>
           </div>
@@ -781,11 +773,11 @@ export default function TermsPage() {
           </div>
           <div data-custom-class="body_text">
             <span>
-              Please review this section and the <bdt></bdt>'<bdt></bdt>
+              Please review this section and the '
               <a data-custom-class="link" href="#prohibited">
                 <span>PROHIBITED ACTIVITIES</span>
               </a>
-              <bdt></bdt>'<bdt></bdt> section carefully prior to using our
+              ' section carefully prior to using our
               Services to understand the (a) rights you give us and (b)
               obligations you have when you post or upload any content through
               the Services.
@@ -798,12 +790,12 @@ export default function TermsPage() {
             <span>
               <strong>Submissions:</strong> By directly sending us any question,
               comment, suggestion, idea, feedback, or other information about
-              the Services (<bdt></bdt>'Submissions'
-              <bdt></bdt>), you agree to assign to us all intellectual property
+              the Services ('Submissions'
+              ), you agree to assign to us all intellectual property
               rights in such Submission. You agree that we shall own this
               Submission and be entitled to its unrestricted use and
               dissemination for any lawful purpose, commercial or otherwise,
-              without acknowledgment or compensation to you.<bdt></bdt>
+              without acknowledgment or compensation to you.
             </span>
           </div>
           <div>
@@ -813,22 +805,22 @@ export default function TermsPage() {
             <span>
               <strong>You are responsible for what you post or upload:</strong>{" "}
               By sending us Submissions
-              <bdt></bdt> through any part of the Services<bdt></bdt> you:
+               through any part of the Services you:
             </span>
           </div>
           <ul>
             <li data-custom-class="body_text">
               <span>
-                confirm that you have read and agree with our <bdt></bdt>'
-                <bdt></bdt>
+                confirm that you have read and agree with our '
+                
               </span>
               <a data-custom-class="link" href="#prohibited">
                 <span>PROHIBITED ACTIVITIES</span>
               </a>
               <span>
-                <bdt></bdt>'<bdt></bdt> and will not post, send, publish,
+                ' and will not post, send, publish,
                 upload, or transmit through the Services any Submission
-                <bdt></bdt> that is illegal, harassing, hateful, harmful,
+                 that is illegal, harassing, hateful, harmful,
                 defamatory, obscene, bullying, abusive, discriminatory,
                 threatening to any person or group, sexually explicit, false,
                 inaccurate, deceitful, or misleading;
@@ -838,32 +830,32 @@ export default function TermsPage() {
               <span>
                 to the extent permissible by applicable law, waive any and all
                 moral rights to any such Submission
-                <bdt></bdt>;
+                ;
               </span>
             </li>
             <li data-custom-class="body_text">
               <span>
-                warrant that any such Submission<bdt></bdt> are original to you
-                or that you have the necessary rights and <bdt></bdt>licences
-                <bdt></bdt> to submit such Submissions<bdt></bdt> and that you
+                warrant that any such Submission are original to you
+                or that you have the necessary rights and licences
+                 to submit such Submissions and that you
                 have full authority to grant us the above-mentioned rights in
-                relation to your Submissions<bdt></bdt>; and
+                relation to your Submissions; and
               </span>
             </li>
             <li data-custom-class="body_text">
               <span>
-                warrant and represent that your Submissions<bdt></bdt> do not
+                warrant and represent that your Submissions do not
                 constitute confidential information.
               </span>
             </li>
           </ul>
           <div data-custom-class="body_text">
-            You are solely responsible for your Submissions<bdt></bdt> and you
+            You are solely responsible for your Submissions and you
             expressly agree to reimburse us for any and all losses that we may
             suffer because of your breach of (a) this section, (b) any third
             party's intellectual property rights, or (c) applicable law.
-            <bdt></bdt>
-            <bdt></bdt>
+            
+            
           </div>
           <div>
             <br />
@@ -896,13 +888,13 @@ export default function TermsPage() {
         <div>
           <div data-custom-class="body_text">
             <span>By using the Services, you represent and warrant that:</span>
-            <bdt data-type="if" id="d2d82ca8-275f-3f86-8149-8a5ef8054af6">
-              <bdt data-type="conditional-block">
-                <bdt
+            <span data-type="if" id="d2d82ca8-275f-3f86-8149-8a5ef8054af6">
+              <span data-type="conditional-block">
+                <span
                   data-record-question-key="user_account_option"
                   data-type="statement"
-                ></bdt>{" "}
-                <bdt data-type="body">
+                ></span>{" "}
+                <span data-type="body">
                   <span>(</span>
                   <span>1</span>
                   <span>
@@ -914,41 +906,41 @@ export default function TermsPage() {
                     ) you will maintain the accuracy of such information and
                     promptly update such registration information as necessary;
                   </span>
-                </bdt>
-              </bdt>
-              <bdt data-type="close"></bdt>&nbsp;
-            </bdt>
+                </span>
+              </span>
+              <span data-type="close"></span>&nbsp;
+            </span>
             <span>(</span>
             <span>3</span>
             <span>
               ) you have the legal capacity and you agree to comply with these
               Legal Terms;
             </span>
-            <bdt data-type="if" id="8d4c883b-bc2c-f0b4-da3e-6d0ee51aca13">
-              <bdt data-type="conditional-block">
-                <bdt
+            <span data-type="if" id="8d4c883b-bc2c-f0b4-da3e-6d0ee51aca13">
+              <span data-type="conditional-block">
+                <span
                   data-record-question-key="user_u13_option"
                   data-type="statement"
-                ></bdt>
+                ></span>
                 &nbsp;
-              </bdt>
+              </span>
               <span>(</span>
               <span>4</span>
               <span>
                 ) you are not a minor in the jurisdiction in which you reside
-                <bdt data-type="if" id="76948fab-ec9e-266a-bb91-948929c050c9">
-                  <bdt data-type="conditional-block">
-                    <bdt
+                <span data-type="if" id="76948fab-ec9e-266a-bb91-948929c050c9">
+                  <span data-type="conditional-block">
+                    <span
                       data-record-question-key="user_o18_option"
                       data-type="statement"
-                    ></bdt>
-                    <bdt data-type="body">
+                    ></span>
+                    <span data-type="body">
                       , or if a minor, you have received parental permission to
                       use the Services
-                    </bdt>
-                  </bdt>
-                  <bdt data-type="close"></bdt>
-                </bdt>
+                    </span>
+                  </span>
+                  <span data-type="close"></span>
+                </span>
                 ; (
               </span>
               <span>5</span>
@@ -958,9 +950,9 @@ export default function TermsPage() {
               </span>
               <span>6</span>
               <span>
-                ) you will not use the Services for any illegal or <bdt></bdt>
+                ) you will not use the Services for any illegal or 
                 unauthorised
-                <bdt></bdt> purpose; and (
+                 purpose; and (
               </span>
               <span>7</span>
               <span>
@@ -968,7 +960,7 @@ export default function TermsPage() {
                 or regulation.
               </span>
               <span></span>
-            </bdt>
+            </span>
           </div>
         </div>
         <div>
@@ -986,15 +978,15 @@ export default function TermsPage() {
                 </span>
               </div>
               <div>
-                <bdt></bdt>
+                
               </div>
               <div>
                 <br />
               </div>
             </div>
             <div>
-              <bdt data-type="conditional-block">
-                <bdt data-type="body">
+              <span data-type="conditional-block">
+                <span data-type="body">
                   <div data-custom-class="heading_1" id="userreg">
                     <strong>
                       <span>
@@ -1014,15 +1006,15 @@ export default function TermsPage() {
                       </span>
                     </strong>
                   </div>
-                </bdt>
-              </bdt>
+                </span>
+              </span>
             </div>
             <div>
               <br />
             </div>
             <div>
-              <bdt data-type="conditional-block">
-                <bdt data-type="body">
+              <span data-type="conditional-block">
+                <span data-type="body">
                   <div data-custom-class="body_text">
                     <span>
                       You may be required to register to use the Services. You
@@ -1032,46 +1024,46 @@ export default function TermsPage() {
                       you select if we determine, in our sole discretion, that
                       such username is inappropriate, obscene, or otherwise
                       objectionable.
-                      <bdt data-type="close"></bdt>
+                      <span data-type="close"></span>
                     </span>
                   </div>
-                </bdt>
-              </bdt>
-            </div>
-            <div>
-              <bdt>
-                <span></span>
-              </bdt>
-              <span>
-                <bdt></bdt>
-                <bdt></bdt>
+                </span>
               </span>
             </div>
             <div>
-              <bdt>
+              <span>
                 <span></span>
-              </bdt>
-            </div>
-            <div>
-              <bdt>
-                <span></span>
-              </bdt>
-              <bdt>
-                <span></span>
-              </bdt>
-            </div>
-            <div>
-              <bdt></bdt>
+              </span>
+              <span>
+                
+                
+              </span>
             </div>
             <div>
               <span>
-                <bdt data-type="conditional-block">
-                  <bdt data-type="body">
+                <span></span>
+              </span>
+            </div>
+            <div>
+              <span>
+                <span></span>
+              </span>
+              <span>
+                <span></span>
+              </span>
+            </div>
+            <div>
+              
+            </div>
+            <div>
+              <span>
+                <span data-type="conditional-block">
+                  <span data-type="body">
                     <div>
                       <br />
                     </div>
-                  </bdt>
-                </bdt>
+                  </span>
+                </span>
               </span>
               <div data-custom-class="heading_1" id="prohibited">
                 <strong>
@@ -1102,8 +1094,8 @@ export default function TermsPage() {
                   You may not access or use the Services for any purpose other
                   than that for which we make the Services available. The
                   Services may not be used in connection with any commercial{" "}
-                  <bdt></bdt>endeavours
-                  <bdt></bdt> except those that are specifically endorsed or
+                  endeavours
+                   except those that are specifically endorsed or
                   approved by us.
                 </span>
               </div>
@@ -1226,7 +1218,7 @@ export default function TermsPage() {
                           <span>
                             <span>
                               <span>
-                                Engage in <bdt></bdt>unauthorised<bdt></bdt>{" "}
+                                Engage in unauthorised{" "}
                                 framing of or linking to the Services.
                               </span>
                             </span>
@@ -1309,12 +1301,12 @@ export default function TermsPage() {
                                 transmit) any material that acts as a passive or
                                 active information collection or transmission
                                 mechanism, including without limitation, clear
-                                graphics interchange formats (<bdt></bdt>
-                                'gifs'<bdt></bdt>), 1x1 pixels, web bugs,
+                                graphics interchange formats (
+                                'gifs'), 1x1 pixels, web bugs,
                                 cookies, or other similar devices (sometimes
-                                referred to as <bdt></bdt>'spyware' or 'passive
+                                referred to as 'spyware' or 'passive
                                 collection mechanisms' or 'pcms'
-                                <bdt></bdt>).
+                                ).
                               </span>
                             </span>
                           </span>
@@ -1409,8 +1401,8 @@ export default function TermsPage() {
                                 including without limitation, any spider, robot,
                                 cheat utility, scraper, or offline reader that
                                 accesses the Services, or use or launch any{" "}
-                                <bdt></bdt>unauthorised
-                                <bdt></bdt> script or other software.
+                                unauthorised
+                                 script or other software.
                               </span>
                             </span>
                           </span>
@@ -1437,14 +1429,14 @@ export default function TermsPage() {
                           <span>
                             <span>
                               <span>
-                                Make any <bdt></bdt>unauthorised<bdt></bdt> use
+                                Make any unauthorised use
                                 of the Services, including collecting usernames
                                 and/or email addresses of users by electronic or
                                 other means for the purpose of sending
                                 unsolicited email, or creating user accounts by
-                                automated means or under false <bdt></bdt>
+                                automated means or under false 
                                 pretences
-                                <bdt></bdt>.
+                                .
                               </span>
                             </span>
                           </span>
@@ -1460,11 +1452,11 @@ export default function TermsPage() {
                                 Use the Services as part of any effort to
                                 compete with us or otherwise use the Services
                                 and/or the Content for any revenue-generating{" "}
-                                <bdt></bdt>
-                                endeavour<bdt></bdt> or commercial enterprise.
+                                
+                                endeavour or commercial enterprise.
                               </span>
                               <span>
-                                <bdt></bdt>
+                                
                               </span>
                             </span>
                           </span>
@@ -1473,20 +1465,20 @@ export default function TermsPage() {
                     </li>
                     <li data-custom-class="body_text">
                       <span>
-                        <bdt>
+                        <span>
                           Use the Services to advertise or offer to sell goods
                           and services.
-                        </bdt>
-                        <bdt></bdt>
+                        </span>
+                        
                       </span>
                     </li>
                     <li data-custom-class="body_text">
                       <span>
-                        <bdt>
+                        <span>
                           Distribute or modify the courses or content in the
                           website in any means possible.
-                        </bdt>
-                        <bdt></bdt>
+                        </span>
+                        
                       </span>
                     </li>
                   </ul>
@@ -1497,9 +1489,9 @@ export default function TermsPage() {
               </div>
               <div>
                 <div>
-                  <bdt data-type="if">
-                    <bdt data-type="conditional-block">
-                      <bdt data-type="body">
+                  <span data-type="if">
+                    <span data-type="conditional-block">
+                      <span data-type="body">
                         <div data-custom-class="heading_1" id="ugc">
                           <strong>
                             <span>
@@ -1519,32 +1511,32 @@ export default function TermsPage() {
                             </span>
                           </strong>
                         </div>
-                      </bdt>
-                    </bdt>
-                  </bdt>
+                      </span>
+                    </span>
+                  </span>
                 </div>
                 <div>
                   <br />
                 </div>
                 <div>
-                  <bdt data-type="if">
-                    <bdt data-type="conditional-block">
-                      <bdt data-type="body">
+                  <span data-type="if">
+                    <span data-type="conditional-block">
+                      <span data-type="body">
                         <div data-custom-class="body_text">
                           <span>
-                            <bdt
+                            <span
                               data-type="if"
                               id="24327c5d-a34f-f7e7-88f1-65a2f788484f"
                             >
-                              <bdt data-type="conditional-block">
-                                <bdt
+                              <span data-type="conditional-block">
+                                <span
                                   data-record-question-key="user_post_content_option"
                                   data-type="statement"
-                                ></bdt>
+                                ></span>
                                 <span>
                                   The Services does not offer users to submit or
                                   post content.
-                                  <bdt></bdt> We may provide you with the
+                                   We may provide you with the
                                   opportunity to create, submit, post, display,
                                   transmit, perform, publish, distribute, or
                                   broadcast content and materials to us or on
@@ -1552,31 +1544,31 @@ export default function TermsPage() {
                                   text, writings, video, audio, photographs,
                                   graphics, comments, suggestions, or personal
                                   information or other material (collectively,{" "}
-                                  <bdt></bdt>'Contributions'
-                                  <bdt></bdt>). Contributions may be viewable by
+                                  'Contributions'
+                                  ). Contributions may be viewable by
                                   other users of the Services and through
-                                  third-party websites.<bdt></bdt> As such, any
+                                  third-party websites. As such, any
                                   Contributions you transmit may be treated in
                                   accordance with the Services' Privacy Policy.
-                                  <bdt></bdt> When you create or make available
+                                   When you create or make available
                                   any Contributions, you thereby represent and
                                   warrant that:
                                   <span>
-                                    <bdt>
-                                      <bdt></bdt>
-                                    </bdt>
+                                    <span>
+                                      
+                                    </span>
                                   </span>
                                 </span>
-                              </bdt>
-                            </bdt>
+                              </span>
+                            </span>
                           </span>
                         </div>
                         &nbsp;
-                      </bdt>
+                      </span>
                       &nbsp;
-                    </bdt>
+                    </span>
                     &nbsp;
-                  </bdt>
+                  </span>
                 </div>
                 <ul>
                   <li data-custom-class="body_text">
@@ -1599,10 +1591,10 @@ export default function TermsPage() {
                       <span>
                         <span data-custom-class="body_text">
                           You are the creator and owner of or have the necessary{" "}
-                          <bdt></bdt>
-                          licences<bdt></bdt>, rights, consents, releases, and
-                          permissions to use and to <bdt></bdt>
-                          authorise<bdt></bdt> us, the Services, and other users
+                          
+                          licences, rights, consents, releases, and
+                          permissions to use and to 
+                          authorise us, the Services, and other users
                           of the Services to use your Contributions in any
                           manner contemplated by the Services and these Legal
                           Terms.
@@ -1640,9 +1632,9 @@ export default function TermsPage() {
                     <span>
                       <span>
                         <span data-custom-class="body_text">
-                          Your Contributions are not unsolicited or <bdt></bdt>
+                          Your Contributions are not unsolicited or 
                           unauthorised
-                          <bdt></bdt> advertising, promotional materials,
+                           advertising, promotional materials,
                           pyramid schemes, chain letters, spam, mass mailings,
                           or other forms of solicitation.
                         </span>
@@ -1654,8 +1646,8 @@ export default function TermsPage() {
                       <span>
                         <span data-custom-class="body_text">
                           Your Contributions are not obscene, lewd, lascivious,
-                          filthy, violent, harassing, <bdt></bdt>
-                          libellous<bdt></bdt>, slanderous, or otherwise
+                          filthy, violent, harassing, 
+                          libellous, slanderous, or otherwise
                           objectionable (as determined by us).
                         </span>
                       </span>
@@ -1741,9 +1733,9 @@ export default function TermsPage() {
               </div>
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt data-type="body">
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span data-type="body">
                     <div data-custom-class="body_text">
                       <span>
                         Any use of the Services in violation of the foregoing
@@ -1752,17 +1744,17 @@ export default function TermsPage() {
                         to use the Services.
                       </span>
                     </div>
-                  </bdt>
-                </bdt>
-              </bdt>
+                  </span>
+                </span>
+              </span>
             </div>
             <div>
               <br />
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt data-type="body">
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span data-type="body">
                     <div data-custom-class="heading_1" id="license">
                       <strong>
                         <span>
@@ -1778,34 +1770,34 @@ export default function TermsPage() {
                             </span>
                             &nbsp;
                           </strong>
-                          CONTRIBUTION <bdt></bdt>LICENCE<bdt></bdt>
+                          CONTRIBUTION LICENCE
                         </span>
                       </strong>
                     </div>
-                  </bdt>
-                </bdt>
-              </bdt>
+                  </span>
+                </span>
+              </span>
             </div>
             <div>
               <br />
             </div>
             <div>
-              <bdt data-type="if" id="a088ddfb-d8c1-9e58-6f21-958c3f4f0709">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if" id="a088ddfb-d8c1-9e58-6f21-958c3f4f0709">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="user_post_content_option"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div data-custom-class="body_text">
               <span>
                 <span>
                   You and Services agree that we may access, store, process, and
                   use any information and personal data that you provide
-                  <bdt></bdt> following the terms of the Privacy Policy
-                  <bdt></bdt> and your choices (including settings).
+                   following the terms of the Privacy Policy
+                   and your choices (including settings).
                 </span>
               </span>
             </div>
@@ -1816,7 +1808,7 @@ export default function TermsPage() {
               <span>
                 By submitting suggestions or other feedback regarding the
                 Services, you agree that we can use and share such feedback for
-                any purpose without compensation to you.<bdt></bdt>
+                any purpose without compensation to you.
               </span>
             </div>
             <div>
@@ -1833,7 +1825,7 @@ export default function TermsPage() {
                 your Contributions to the Services and you expressly agree to
                 exonerate us from any and all responsibility and to refrain from
                 any legal action against us regarding your Contributions.
-                <bdt></bdt>
+                
               </span>
             </div>
             <div data-custom-class="body_text">
@@ -1843,42 +1835,42 @@ export default function TermsPage() {
               <span>
                 <span>
                   <span>
-                    <bdt data-type="if">
-                      <bdt data-type="close"></bdt>
-                    </bdt>
+                    <span data-type="if">
+                      <span data-type="close"></span>
+                    </span>
                   </span>
                 </span>
               </span>
             </div>
             <div data-custom-class="body_text">
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="review_option"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="mobile_app_option"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="socialnetwork_link_option"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div data-custom-class="heading_1" id="socialmedia">
               <strong>
@@ -1897,16 +1889,16 @@ export default function TermsPage() {
             </div>
             <div>
               <br />
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt data-type="body">
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span data-type="body">
                     <div data-custom-class="body_text">
                       <span>
                         As part of the functionality of the Services, you may
                         link your account with online accounts you have with
                         third-party service providers (each such account, a{" "}
-                        <bdt></bdt>'Third-Party Account'
-                        <bdt></bdt>) by either: (1) providing your Third-Party
+                        'Third-Party Account'
+                        ) by either: (1) providing your Third-Party
                         Account login information through the Services; or (2)
                         allowing us to access your <span>Third-Party</span>{" "}
                         Account, as is permitted under the applicable terms and
@@ -1925,7 +1917,7 @@ export default function TermsPage() {
                         understand that (1) we may access, make available, and
                         store (if applicable) any content that you have provided
                         to and stored in your <span>Third-Party</span> Account
-                        (the <bdt></bdt>'Social Network Content'<bdt></bdt>) so
+                        (the 'Social Network Content') so
                         that it is available on and through the Services via
                         your account, including without limitation any friend
                         lists and (2) we may submit to and receive from your{" "}
@@ -1969,33 +1961,33 @@ export default function TermsPage() {
                         associated with your account.
                       </span>
                     </div>
-                  </bdt>
-                </bdt>
-              </bdt>
+                  </span>
+                </span>
+              </span>
             </div>
             <div>
               <br />
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt data-type="body">
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span data-type="body">
                     <div>
                       <span></span>
                     </div>
-                  </bdt>
-                </bdt>
-              </bdt>
+                  </span>
+                </span>
+              </span>
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="3rd_party_option"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div data-custom-class="heading_1" id="thirdparty">
               <strong>
@@ -2017,15 +2009,15 @@ export default function TermsPage() {
             </div>
             <div data-custom-class="body_text">
               <span>
-                The Services may contain (or you may be sent via the <bdt></bdt>
+                The Services may contain (or you may be sent via the 
                 Site
-                <bdt></bdt>) links to other websites (<bdt></bdt>
-                'Third-Party Websites'<bdt></bdt>) as well as articles,
+                ) links to other websites (
+                'Third-Party Websites') as well as articles,
                 photographs, text, graphics, pictures, designs, music, sound,
                 video, information, applications, software, and other content or
                 items belonging to or originating from third parties (
-                <bdt></bdt>'Third-Party Content'
-                <bdt></bdt>). Such <span>Third-Party</span> Websites and{" "}
+                'Third-Party Content'
+                ). Such <span>Third-Party</span> Websites and{" "}
                 <span>Third-Party</span> Content are not investigated,
                 monitored, or checked for accuracy, appropriateness, or
                 completeness by us, and we are not responsible for any
@@ -2064,19 +2056,19 @@ export default function TermsPage() {
               <br />
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="close"></bdt>
-              </bdt>
+              <span data-type="if">
+                <span data-type="close"></span>
+              </span>
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="advertiser_option"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div data-custom-class="heading_1" id="sitemanage">
               <strong>
@@ -2120,14 +2112,14 @@ export default function TermsPage() {
               <br />
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="privacy_policy_option"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div data-custom-class="heading_1" id="ppyes">
               <strong>
@@ -2154,7 +2146,7 @@ export default function TermsPage() {
                 <strong>
                   &nbsp;
                   <span>
-                    <bdt
+                    <span
                       data-id="d10c7fd7-0685-12ac-c717-cbc45ff916d1"
                       data-type="question"
                     >
@@ -2165,92 +2157,92 @@ export default function TermsPage() {
                       >
                         https://www.partialty.com/privacy
                       </a>
-                    </bdt>
+                    </span>
                   </span>
                 </strong>
                 . By using the Services, you agree to be bound by our Privacy
                 Policy, which is incorporated into these Legal Terms. Please be
-                advised the Services are hosted in <bdt></bdt>
-                <bdt>Hong Kong SAR China</bdt>
-                <bdt></bdt>
-                <bdt></bdt>. If you access the Services from any other region of
+                advised the Services are hosted in 
+                <span>Hong Kong SAR China</span>
+                
+                . If you access the Services from any other region of
                 the world with laws or other requirements governing personal
                 data collection, use, or disclosure that differ from applicable
                 laws in{" "}
                 <span>
-                  <bdt></bdt>
-                  <bdt>Hong Kong SAR China</bdt>
-                  <bdt></bdt>
+                  
+                  <span>Hong Kong SAR China</span>
+                  
                 </span>
-                <bdt></bdt>, then through your continued use of the Services,
+                , then through your continued use of the Services,
                 you are transferring your data to{" "}
                 <span>
-                  <bdt></bdt>
-                  <bdt>Hong Kong SAR China</bdt>
-                  <bdt></bdt>
+                  
+                  <span>Hong Kong SAR China</span>
+                  
                 </span>
-                <bdt></bdt>, and you expressly consent to have your data
+                , and you expressly consent to have your data
                 transferred to and processed in{" "}
                 <span>
-                  <bdt></bdt>
-                  <bdt>Hong Kong SAR China</bdt>
-                  <bdt></bdt>
+                  
+                  <span>Hong Kong SAR China</span>
+                  
                 </span>
-                <bdt></bdt>.<bdt></bdt>
-                <bdt data-type="if" id="547bb7bb-ecf2-84b9-1cbb-a861dc3e14e7">
-                  <bdt data-type="conditional-block">
-                    <bdt
+                .
+                <span data-type="if" id="547bb7bb-ecf2-84b9-1cbb-a861dc3e14e7">
+                  <span data-type="conditional-block">
+                    <span
                       data-record-question-key="user_u13_option"
                       data-type="statement"
                     >
                       <span>
-                        <bdt></bdt>
+                        
                       </span>
-                    </bdt>
-                  </bdt>
-                </bdt>
+                    </span>
+                  </span>
+                </span>
               </span>
             </div>
             <div>
               <br />
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="close"></bdt>
-              </bdt>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="close"></span>
+              </span>
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="privacy_policy_followup"
                     data-type="statement"
-                  ></bdt>
-                </bdt>
-              </bdt>
+                  ></span>
+                </span>
+              </span>
             </div>
             <div>
-              <bdt data-type="if">
-                <bdt data-type="conditional-block">
-                  <bdt
+              <span data-type="if">
+                <span data-type="conditional-block">
+                  <span
                     data-record-question-key="copyright_agent_option"
                     data-type="statement"
                   >
-                    <bdt></bdt>
-                    <bdt></bdt>
-                  </bdt>
-                  <bdt data-type="if">
-                    <bdt data-type="close"></bdt>
-                  </bdt>
-                </bdt>
-              </bdt>
+                    
+                    
+                  </span>
+                  <span data-type="if">
+                    <span data-type="close"></span>
+                  </span>
+                </span>
+              </span>
             </div>
             <div>
-              <bdt></bdt>
-              <bdt data-type="if">
-                <bdt data-type="close">
-                  <bdt></bdt>
-                </bdt>
-                <bdt></bdt>
-              </bdt>
+              
+              <span data-type="if">
+                <span data-type="close">
+                  
+                </span>
+                
+              </span>
             </div>
             <div data-custom-class="heading_1" id="terms">
               <strong>
@@ -2286,16 +2278,16 @@ export default function TermsPage() {
                 COVENANT CONTAINED IN THESE LEGAL TERMS OR OF ANY APPLICABLE LAW
                 OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE
                 SERVICES OR DELETE{" "}
-                <bdt data-type="if" id="a6e121c2-36b4-5066-bf9f-a0a33512e768">
-                  <bdt data-type="conditional-block">
-                    <bdt
+                <span data-type="if" id="a6e121c2-36b4-5066-bf9f-a0a33512e768">
+                  <span data-type="conditional-block">
+                    <span
                       data-record-question-key="user_account_option"
                       data-type="statement"
-                    ></bdt>
-                    <bdt data-type="body">YOUR ACCOUNT AND&nbsp;</bdt>
-                  </bdt>
-                  <bdt data-type="close"></bdt>
-                </bdt>
+                    ></span>
+                    <span data-type="body">YOUR ACCOUNT AND&nbsp;</span>
+                  </span>
+                  <span data-type="close"></span>
+                </span>
                 ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT
                 WARNING, IN OUR SOLE DISCRETION.
               </span>
@@ -2345,7 +2337,7 @@ export default function TermsPage() {
                 We reserve the right to change, modify, or remove the contents
                 of the Services at any time or for any reason at our sole
                 discretion without notice. However, we have no obligation to
-                update any information on our Services.<bdt></bdt> We will not
+                update any information on our Services. We will not
                 be liable to you or any third party for any modification, price
                 change, suspension, or discontinuance of the Services.
               </span>
@@ -2396,28 +2388,28 @@ export default function TermsPage() {
             </div>
             <div>
               <span>
-                <bdt></bdt>
+                
               </span>
             </div>
             <div data-custom-class="body_text">
               <span>
                 These Legal Terms shall be governed by and defined following the
-                laws of <bdt></bdt>
-                <bdt>Hong Kong SAR China</bdt>
+                laws of 
+                <span>Hong Kong SAR China</span>
                 <span>
-                  <bdt></bdt>
+                  
                 </span>
-                . <bdt>Patialty.com, Inc.</bdt> and yourself irrevocably consent
+                . <span>Patialty.com, Inc.</span> and yourself irrevocably consent
                 that the courts of{" "}
                 <span>
-                  <bdt></bdt>
-                  <bdt>Hong Kong SAR China</bdt>
+                  
+                  <span>Hong Kong SAR China</span>
                   <span>
-                    <bdt></bdt>
+                    
                   </span>
                 </span>{" "}
                 shall have exclusive jurisdiction to resolve any dispute which
-                may arise in connection with these Legal Terms.<bdt></bdt>
+                may arise in connection with these Legal Terms.
               </span>
             </div>
             <div>
@@ -2446,10 +2438,10 @@ export default function TermsPage() {
               <br />
             </div>
             <div>
-              <bdt></bdt>
+              
             </div>
             <div>
-              <bdt></bdt>
+              
             </div>
             <div data-custom-class="heading_2">
               <strong>Informal Negotiations</strong>
@@ -2461,12 +2453,12 @@ export default function TermsPage() {
               <span>
                 To expedite resolution and control the cost of any dispute,
                 controversy, or claim related to these Legal Terms (each a{" "}
-                <bdt></bdt>'Dispute' and collectively, the 'Disputes'
-                <bdt></bdt>) brought by either you or us (individually, a{" "}
-                <bdt></bdt>'Party' and collectively, the 'Parties'<bdt></bdt>
+                'Dispute' and collectively, the 'Disputes'
+                ) brought by either you or us (individually, a{" "}
+                'Party' and collectively, the 'Parties'
                 ), the Parties agree to first attempt to negotiate any Dispute
                 (except those Disputes expressly provided below) informally for
-                at least <bdt>thirty (30)</bdt> days before initiating
+                at least <span>thirty (30)</span> days before initiating
                 arbitration. Such informal negotiations commence upon written
                 notice from one Party to the other Party.
               </span>
@@ -2475,7 +2467,7 @@ export default function TermsPage() {
               <br />
             </div>
             <div>
-              <bdt></bdt>
+              
             </div>
             <div data-custom-class="heading_2">
               <strong>Binding Arbitration</strong>
@@ -2484,9 +2476,9 @@ export default function TermsPage() {
               <br />
             </div>
             <div data-custom-class="body_text">
-              <bdt>
+              <span>
                 <span></span>
-              </bdt>
+              </span>
             </div>
             <div data-custom-class="body_text">
               Any dispute arising out of or in connection with these Legal
@@ -2496,22 +2488,22 @@ export default function TermsPage() {
               Arbitration Chamber (Belgium, Brussels, Avenue Louise, 146)
               according to the Rules of this ICAC, which, as a result of
               referring to it, is considered as the part of this clause. The
-              number of arbitrators shall be <bdt>one (1)</bdt>. The seat, or
-              legal place, or arbitration shall be <bdt></bdt>
-              <bdt>Hong Kong SAR China</bdt>
-              <bdt></bdt>
-              <bdt></bdt>. The language of the proceedings shall be{" "}
-              <bdt>English</bdt>. The governing law of these Legal Terms shall
-              be substantive law of <bdt></bdt>
-              <bdt></bdt>
-              <bdt>Hong Kong SAR China</bdt>
-              <bdt>
-                <bdt></bdt>
-              </bdt>
+              number of arbitrators shall be <span>one (1)</span>. The seat, or
+              legal place, or arbitration shall be 
+              <span>Hong Kong SAR China</span>
+              
+              . The language of the proceedings shall be{" "}
+              <span>English</span>. The governing law of these Legal Terms shall
+              be substantive law of 
+              
+              <span>Hong Kong SAR China</span>
+              <span>
+                
+              </span>
               .
-              <bdt>
-                <bdt></bdt>
-              </bdt>
+              <span>
+                
+              </span>
             </div>
             <div>
               <br />
@@ -2527,8 +2519,8 @@ export default function TermsPage() {
               Dispute between the Parties individually. To the full extent
               permitted by law, (a) no arbitration shall be joined with any
               other proceeding; (b) there is no right or authority for any
-              Dispute to be arbitrated on a class-action basis or to <bdt></bdt>
-              utilise<bdt></bdt> class action procedures; and (c) there is no
+              Dispute to be arbitrated on a class-action basis or to 
+              utilise class action procedures; and (c) there is no
               right or authority for any Dispute to be brought in a purported
               representative capacity on behalf of the general public or any
               other persons.
@@ -2537,36 +2529,36 @@ export default function TermsPage() {
               <br />
             </div>
             <div data-custom-class="heading_2">
-              <bdt></bdt>
+              
               <strong>
                 Exceptions to Informal Negotiations and Arbitration
               </strong>
-              <bdt></bdt>
+              
             </div>
             <div>
               <br />
             </div>
             <div data-custom-class="body_text">
-              <bdt></bdt>The Parties agree that the following Disputes are not
+              The Parties agree that the following Disputes are not
               subject to the above provisions concerning informal negotiations
               binding arbitration: (a) any Disputes seeking to enforce or
               protect, or concerning the validity of, any of the intellectual
               property rights of a Party; (b) any Dispute related to, or arising
               from, allegations of theft, piracy, invasion of privacy, or{" "}
-              <bdt></bdt>unauthorised
-              <bdt></bdt> use; and (c) any claim for injunctive relief. If this
+              unauthorised
+               use; and (c) any claim for injunctive relief. If this
               provision is found to be illegal or unenforceable, then neither
               Party will elect to arbitrate any Dispute falling within that
               portion of this provision found to be illegal or unenforceable and
               such Dispute shall be decided by a court of competent jurisdiction
               within the courts listed for jurisdiction above, and the Parties
               agree to submit to the personal jurisdiction of that court.
-              <bdt></bdt>
+              
             </div>
             <div>
-              <bdt>
-                <bdt></bdt>
-              </bdt>
+              <span>
+                
+              </span>
             </div>
             <div>
               <br />
@@ -2638,7 +2630,7 @@ export default function TermsPage() {
                 ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND
                 MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE
                 WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE
-                SERVICES, (3) ANY <bdt></bdt>UNAUTHORISED<bdt></bdt> ACCESS TO
+                SERVICES, (3) ANY UNAUTHORISED ACCESS TO
                 OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL
                 INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY
                 INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE
@@ -2656,7 +2648,7 @@ export default function TermsPage() {
                 MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY
                 PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A
                 PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU
-                SHOULD USE YOUR BEST <bdt></bdt>JUDGEMENT<bdt></bdt> AND
+                SHOULD USE YOUR BEST JUDGEMENT AND
                 EXERCISE CAUTION WHERE APPROPRIATE.
               </span>
             </div>
@@ -2695,66 +2687,66 @@ export default function TermsPage() {
                   OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF
                   WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
                 </span>{" "}
-                <bdt data-type="if" id="3c3071ce-c603-4812-b8ca-ac40b91b9943">
+                <span data-type="if" id="3c3071ce-c603-4812-b8ca-ac40b91b9943">
                   <span data-custom-class="body_text">
-                    <bdt data-type="conditional-block">
-                      <bdt
+                    <span data-type="conditional-block">
+                      <span
                         data-record-question-key="limitations_liability_option"
                         data-type="statement"
-                      ></bdt>
-                      <bdt data-type="body">
+                      ></span>
+                      <span data-type="body">
                         NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED
                         HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER
                         AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL
                         TIMES BE LIMITED TO{" "}
-                        <bdt
+                        <span
                           data-type="if"
                           id="73189d93-ed3a-d597-3efc-15956fa8e04e"
                         >
-                          <bdt data-type="conditional-block">
-                            <bdt
+                          <span data-type="conditional-block">
+                            <span
                               data-record-question-key="limitations_liability_option"
                               data-type="statement"
-                            ></bdt>
-                            <bdt data-type="body">
+                            ></span>
+                            <span data-type="body">
                               THE LESSER OF THE AMOUNT PAID, IF ANY, BY YOU TO
                               US
-                              <bdt data-type="conditional-block">
-                                <bdt
+                              <span data-type="conditional-block">
+                                <span
                                   data-record-question-key="limilation_liability_time_option"
                                   data-type="statement"
-                                ></bdt>{" "}
-                                <bdt data-type="body">
+                                ></span>{" "}
+                                <span data-type="body">
                                   <span>
                                     DURING THE{" "}
-                                    <bdt
+                                    <span
                                       data-id="98461079-8520-8e55-edbd-84fdc37a26d4"
                                       data-type="question"
                                     >
                                       six (6)
-                                    </bdt>{" "}
+                                    </span>{" "}
                                     MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION
                                     ARISING
                                   </span>
-                                </bdt>
-                              </bdt>
-                              <bdt data-type="close"></bdt> OR <bdt></bdt>
-                              <bdt>$1,000.00 USD</bdt>
-                              <bdt></bdt>
-                              <bdt></bdt>
-                            </bdt>
-                          </bdt>
-                        </bdt>
+                                </span>
+                              </span>
+                              <span data-type="close"></span> OR 
+                              <span>$1,000.00 USD</span>
+                              
+                              
+                            </span>
+                          </span>
+                        </span>
                         <span>
-                          <bdt
+                          <span
                             data-type="if"
                             id="3c3071ce-c603-4812-b8ca-ac40b91b9943"
                           >
-                            <bdt data-type="close">
+                            <span data-type="close">
                               <span data-custom-class="body_text">.</span>
-                            </bdt>
+                            </span>
                             &nbsp;
-                          </bdt>
+                          </span>
                         </span>
                         <span data-custom-class="body_text">
                           CERTAIN US STATE LAWS AND INTERNATIONAL LAWS DO NOT
@@ -2764,13 +2756,13 @@ export default function TermsPage() {
                           DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND
                           YOU MAY HAVE ADDITIONAL RIGHTS.
                         </span>
-                      </bdt>
-                    </bdt>
+                      </span>
+                    </span>
                   </span>
-                  <bdt data-type="close">
+                  <span data-type="close">
                     <span data-custom-class="body_text"></span>
-                  </bdt>
-                </bdt>
+                  </span>
+                </span>
               </span>
             </div>
             <div>
@@ -2806,13 +2798,13 @@ export default function TermsPage() {
                 loss, damage, liability, claim, or demand, including reasonable
                 attorneys' fees and expenses, made by any third party due to or
                 arising out of:{" "}
-                <bdt data-type="if" id="475fffa5-05ca-def8-ac88-f426b238903c">
-                  <bdt data-type="conditional-block">
-                    <bdt
+                <span data-type="if" id="475fffa5-05ca-def8-ac88-f426b238903c">
+                  <span data-type="conditional-block">
+                    <span
                       data-record-question-key="user_post_content_option"
                       data-type="statement"
-                    ></bdt>
-                  </bdt>
+                    ></span>
+                  </span>
                   (<span>1</span>) use of the Services; (<span>2</span>) breach
                   of these Legal Terms; (<span>3</span>) any breach of your
                   representations and warranties set forth in these Legal Terms;
@@ -2821,14 +2813,14 @@ export default function TermsPage() {
                   rights; or (<span>5</span>) any overt harmful act toward any
                   other user of the Services with whom you connected via the
                   Services. Notwithstanding the foregoing, we reserve the right,
-                  at your expense, to assume the exclusive <bdt></bdt>defence
-                  <bdt></bdt> and control of any matter for which you are
+                  at your expense, to assume the exclusive defence
+                   and control of any matter for which you are
                   required to indemnify us, and you agree to cooperate, at your
-                  expense, with our <bdt></bdt>defence
-                  <bdt></bdt> of such claims. We will use reasonable efforts to
+                  expense, with our defence
+                   of such claims. We will use reasonable efforts to
                   notify you of any such claim, action, or proceeding which is
                   subject to this indemnification upon becoming aware of it.
-                </bdt>
+                </span>
               </span>
             </div>
             <div>
@@ -2918,10 +2910,10 @@ export default function TermsPage() {
               <br />
             </div>
             <div>
-              <bdt>
+              <span>
                 <span></span>
-              </bdt>
-              <bdt></bdt>
+              </span>
+              
             </div>
             <div data-custom-class="heading_1" id="california">
               <strong>
@@ -2959,7 +2951,7 @@ export default function TermsPage() {
               <br />
             </div>
             <div>
-              <bdt></bdt>
+              
             </div>
             <div data-custom-class="heading_1" id="misc">
               <strong>
@@ -3003,16 +2995,16 @@ export default function TermsPage() {
                 or agency relationship created between you and us as a result of
                 these Legal Terms or use of the Services. You agree that these
                 Legal Terms will not be construed against us by virtue of having
-                drafted them. You hereby waive any and all <bdt></bdt>defences
-                <bdt></bdt> you may have based on the electronic form of these
+                drafted them. You hereby waive any and all defences
+                 you may have based on the electronic form of these
                 Legal Terms and the lack of signing by the parties hereto to
                 execute these Legal Terms.
               </span>
             </div>
             <div>
-              <bdt>
+              <span>
                 <span></span>
-              </bdt>
+              </span>
             </div>
             <div>
               <br />
@@ -3054,15 +3046,15 @@ export default function TermsPage() {
             <div data-custom-class="body_text">
               <span>
                 <span>
-                  <bdt>
+                  <span>
                     <strong>Patialty.com, Inc.</strong>
-                  </bdt>
+                  </span>
                   <strong>
-                    <bdt></bdt>
+                    
                   </strong>
                 </span>
                 <strong>
-                  <bdt></bdt>
+                  
                 </strong>
               </span>
             </div>
@@ -3071,16 +3063,16 @@ export default function TermsPage() {
                 <span>
                   <strong>
                     <span>
-                      <bdt>
-                        <bdt></bdt>
-                      </bdt>
-                      <bdt></bdt>
-                      <bdt></bdt>
+                      <span>
+                        
+                      </span>
+                      
+                      
                     </span>
                   </strong>
                   <strong>
                     <span>
-                      <bdt></bdt>
+                      
                     </span>
                   </strong>
                 </span>
@@ -3091,7 +3083,7 @@ export default function TermsPage() {
                 <strong>
                   <span>
                     <strong>
-                      <bdt></bdt>
+                      
                     </strong>
                   </span>
                   &nbsp;
@@ -3103,7 +3095,7 @@ export default function TermsPage() {
                 <strong>
                   <span>
                     <strong>
-                      <bdt></bdt>
+                      
                     </strong>
                   </span>
                 </strong>
@@ -3113,11 +3105,11 @@ export default function TermsPage() {
               <strong>
                 <span>
                   <strong>
-                    <bdt>
-                      <bdt></bdt>
-                      <bdt>customer@partialty.com</bdt>
-                      <bdt></bdt>
-                    </bdt>
+                    <span>
+                      
+                      <span>customer@partialty.com</span>
+                      
+                    </span>
                   </strong>
                 </span>
               </strong>
