@@ -1,5 +1,5 @@
-import { PublicNav } from "~/components/Nav/PublicNav";
-import Hero from "./Hero";
+import { PublicNav } from '~/components/Nav/PublicNav';
+import Hero from './Hero';
 
 export default function HeroContainer() {
   return (

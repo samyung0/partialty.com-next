@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from 'next/image';
 
 export const Footer = () => {
   return (
@@ -9,7 +9,13 @@ export const Footer = () => {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Image className="h-7 object-contain" src={"/svg/partialty.svg"} alt="Partialty.com" height="28" width="28" />
+            <Image
+              className="h-7 object-contain"
+              src={'/svg/partialty.svg'}
+              alt="Partialty.com"
+              height="28"
+              width="28"
+            />
             <p className="text-sm leading-6 text-gray-300">
               Learn Web Dev in an interactive way through simple words and organized manner.
             </p>
@@ -154,5 +160,5 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};

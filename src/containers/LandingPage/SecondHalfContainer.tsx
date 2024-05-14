@@ -1,7 +1,7 @@
-import { Footer } from "~/components/Footer";
-import FAQPage from "../FAQPage";
-import { forwardRef } from "react";
-import Image from "next/image";
+import { Footer } from '~/components/Footer';
+import FAQPage from '../FAQPage';
+import { forwardRef } from 'react';
+import Image from 'next/image';
 
 const CreatorMessage = () => {
   return (
@@ -14,20 +14,18 @@ const CreatorMessage = () => {
         height="40"
         alt=""
         className="mx-2 block size-[30px] rounded-full object-contain md:mx-4 md:size-[40px]"
-      />{" "}
+      />{' '}
       from Hong Kong
     </section>
   );
 };
 
-export default forwardRef<HTMLDivElement, { setPage: () => any }>(
-  function SecondHalfContainer({ setPage }, ref) {
-    return (
-      <>
-        <FAQPage buttonAction={setPage} topButton={true} />
-        <CreatorMessage />
-        <Footer />
-      </>
-    );
-  },
-);
+export default forwardRef<HTMLDivElement, { setPage: () => any }>(function SecondHalfContainer({ setPage }, ref) {
+  return (
+    <>
+      <FAQPage buttonAction={setPage} topButton={true} />
+      <CreatorMessage />
+      <Footer />
+    </>
+  );
+});

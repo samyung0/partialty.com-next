@@ -1,36 +1,27 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useCallback } from "react";
-import { SpriteProps } from "../Hero";
+import Image from 'next/image';
+import { useCallback } from 'react';
+import { type SpriteProps } from '../Hero';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export default function BlastButton({ sprite }: { sprite: SpriteProps }) {
   const blast = useCallback(() => {
     sprite.largeSprite?.forEach((sprite) => {
       if (!sprite) return;
       sprite.setAngularVelocity(Math.min(0.35, Math.random()));
-      sprite.setVelocity(
-        (Math.random() < 0.5 ? -1 : 1) * Math.random() * 50,
-        Math.random() * 50,
-      );
+      sprite.setVelocity((Math.random() < 0.5 ? -1 : 1) * Math.random() * 50, Math.random() * 50);
     });
     sprite.mediumSprite?.forEach((sprite) => {
       if (!sprite) return;
       sprite.setAngularVelocity(Math.min(0.35, Math.random()));
-      sprite.setVelocity(
-        (Math.random() < 0.5 ? -1 : 1) * Math.random() * 50,
-        Math.random() * 50,
-      );
+      sprite.setVelocity((Math.random() < 0.5 ? -1 : 1) * Math.random() * 50, Math.random() * 50);
     });
     sprite.smallSprite?.forEach((sprite) => {
       if (!sprite) return;
       sprite.setAngularVelocity(Math.min(0.35, Math.random()));
-      sprite.setVelocity(
-        (Math.random() < 0.5 ? -1 : 1) * Math.random() * 50,
-        Math.random() * 50,
-      );
+      sprite.setVelocity((Math.random() < 0.5 ? -1 : 1) * Math.random() * 50, Math.random() * 50);
     });
   }, [sprite]);
   return (
@@ -47,7 +38,7 @@ export default function BlastButton({ sprite }: { sprite: SpriteProps }) {
       className="absolute left-8 top-[15%] z-[50] hidden flex-col items-center justify-center md:flex lg:bottom-[15%] lg:left-24 lg:top-[unset]"
     >
       <Image
-        src={"/img/blast.png"}
+        src={'/img/blast.png'}
         alt="Blast"
         width="40"
         height="40"

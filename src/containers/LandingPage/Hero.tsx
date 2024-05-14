@@ -1,11 +1,11 @@
-"use client";
+'use client';
 // import { useRef } from "react";
-import { FollowerPointerCard } from "~/components/FollowingPointer";
-import HeroText from "./HeroText";
-import AnimateHeroText from "./AnimateHeroText";
-import Phaser from "./Phaser";
-import { useState } from "react";
-import BlastButton from "./Phaser/BlastButton";
+import { FollowerPointerCard } from '~/components/FollowingPointer';
+import HeroText from './HeroText';
+import AnimateHeroText from './AnimateHeroText';
+import Phaser from './Phaser';
+import { useState } from 'react';
+import BlastButton from './Phaser/BlastButton';
 
 export interface SpriteProps {
   largeSprite: Phaser.Physics.Matter.Sprite[] | null;

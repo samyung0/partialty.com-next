@@ -1,52 +1,36 @@
-import { github, google, lucia } from "~/auth/lucia";
-import { cookies } from "next/headers";
-import { OAuth2RequestError } from "arctic";
-import { generateIdFromEntropySize, Lucia } from "lucia";
-import { db } from "~/server/db";
-import { profiles } from "db/schema/profiles";
-import { eq, and } from "drizzle-orm";
-import { NewUser, Session, User } from "~/definition/auth";
-import { NextResponse } from "next/server";
-import { setSession } from "~/auth/setSession";
+import { github, google, lucia } from '~/auth/lucia';
+import { cookies } from 'next/headers';
+import { OAuth2RequestError } from 'arctic';
+import { generateIdFromEntropySize, Lucia } from 'lucia';
+import { db } from '~/server/db';
+import { profiles } from 'db/schema/profiles';
+import { eq, and } from 'drizzle-orm';
+import { type NewUser, Session, User } from '~/definition/auth';
+import { NextResponse } from 'next/server';
+import { setSession } from '~/auth/setSession';
 
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url);
-  const code = url.searchParams.get("code");
-  const state = url.searchParams.get("state");
-  const storedState = cookies().get("google_oauth_state")?.value ?? null;
-  const storedCodeVerifier =
-    cookies().get("google_code_verifier")?.value ?? null;
-  if (
-    !code ||
-    !state ||
-    !storedCodeVerifier ||
-    !storedState ||
-    state !== storedState
-  ) {
-    const url = new URL("/login", request.url);
-    url.searchParams.set(
-      "error",
-      "Oauth Error! Invalid state. Please try logging in again",
-    );
+  const code = url.searchParams.get('code');
+  const state = url.searchParams.get('state');
+  const storedState = cookies().get('google_oauth_state')?.value ?? null;
+  const storedCodeVerifier = cookies().get('google_code_verifier')?.value ?? null;
+  if (!code || !state || !storedCodeVerifier || !storedState || state !== storedState) {
+    const url = new URL('/login', request.url);
+    url.searchParams.set('error', 'Oauth Error! Invalid state. Please try logging in again');
     return Response.redirect(url);
   }
 
   try {
-    const tokens = await google.validateAuthorizationCode(
-      code,
-      storedCodeVerifier,
-    );
-    const response = await fetch(
-      "https://openidconnect.googleapis.com/v1/userinfo",
-      {
-        headers: {
-          Authorization: `Bearer ${tokens.accessToken}`,
-        },
+    const tokens = await google.validateAuthorizationCode(code, storedCodeVerifier);
+    const response = await fetch('https://openidconnect.googleapis.com/v1/userinfo', {
+      headers: {
+        Authorization: `Bearer ${tokens.accessToken}`,
       },
-    );
+    });
     const googleUser = (await response.json()) as GoogleUser;
 
-    if (!googleUser.sub) throw new Error("Cannot find google account ID!");
+    if (!googleUser.sub) throw new Error('Cannot find google account ID!');
 
     // Replace this with your own DB client.
     const existingUser = (
@@ -61,7 +45,7 @@ export async function GET(request: Request): Promise<Response> {
       return new Response(null, {
         status: 302,
         headers: {
-          Location: "/",
+          Location: '/',
         },
       });
     }
@@ -80,12 +64,7 @@ export async function GET(request: Request): Promise<Response> {
       const existingDatabaseUserWithEmail = await db
         .select()
         .from(profiles)
-        .where(
-          and(
-            eq(profiles.email, googleUser.email),
-            eq(profiles.email_verified, true),
-          ),
-        )
+        .where(and(eq(profiles.email, googleUser.email), eq(profiles.email_verified, true)))
         .limit(1);
       if (existingDatabaseUserWithEmail.length > 0) {
         await db
@@ -93,11 +72,8 @@ export async function GET(request: Request): Promise<Response> {
           .set({ google_id: String(googleUser.sub) })
           .where(eq(profiles.id, existingDatabaseUserWithEmail[0]!.id));
         await setSession(existingDatabaseUserWithEmail[0]!.id);
-        const url = new URL("/", request.url);
-        url.searchParams.set(
-          "action",
-          "Linked to account with email " + googleUser.email,
-        );
+        const url = new URL('/', request.url);
+        url.searchParams.set('action', 'Linked to account with email ' + googleUser.email);
         return Response.redirect(url);
       }
     }
@@ -106,15 +82,12 @@ export async function GET(request: Request): Promise<Response> {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/",
+        Location: '/',
       },
     });
   } catch (e) {
     const url = new URL(request.url);
-    url.searchParams.set(
-      "error",
-      `Oauth Error! ${(e as any).toString()} Please try logging in again`,
-    );
+    url.searchParams.set('error', `Oauth Error! ${(e as any).toString()} Please try logging in again`);
     return Response.redirect(url);
     // the specific error message depends on the provider
     // if (e instanceof OAuth2RequestError) {

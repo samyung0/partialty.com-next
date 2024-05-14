@@ -1,6 +1,6 @@
-import { Footer } from "~/components/Footer";
-import { PublicNav } from "~/components/Nav/PublicNav";
-import CookiePolicyPage from "~/containers/CookiePolicyPage";
+import { Footer } from '~/components/Footer';
+import { PublicNav } from '~/components/Nav/PublicNav';
+import CookiePolicyPage from '~/containers/CookiePolicyPage';
 
 const App = () => {
   return (

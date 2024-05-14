@@ -1,5 +1,5 @@
-import { cookies } from "next/headers";
-import { lucia } from "./lucia";
+import { cookies } from 'next/headers';
+import { lucia } from './lucia';
 
 export const setSession = async (id: string) => {
   const session = await lucia.createSession(id, {
@@ -9,9 +9,5 @@ export const setSession = async (id: string) => {
     idle_expires: 0n,
   });
   const sessionCookie = lucia.createSessionCookie(session.id);
-  cookies().set(
-    sessionCookie.name,
-    sessionCookie.value,
-    sessionCookie.attributes,
-  );
-}
+  cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+};

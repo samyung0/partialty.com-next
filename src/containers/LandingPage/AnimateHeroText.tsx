@@ -1,18 +1,14 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const spring = {
-  type: "spring",
+  type: 'spring',
   damping: 10,
   stiffness: 100,
 };
 
-export default function AnimateHeroText({
-  HeroText,
-}: {
-  HeroText: React.ReactNode;
-}) {
+export default function AnimateHeroText({ HeroText }: { HeroText: React.ReactNode }) {
   return (
     <motion.div
       initial={{

@@ -1,22 +1,22 @@
-import { Github, Instagram, Linkedin, Mail } from "lucide-react";
-import ContactLinkItem from "./ContactLinkItem";
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
+import ContactLinkItem from './ContactLinkItem';
 
 const list = [
-  { icon: Mail, href: "mailto:yungchinpang999@gmail.com", name: "Email" },
+  { icon: Mail, href: 'mailto:yungchinpang999@gmail.com', name: 'Email' },
   {
     icon: Linkedin,
-    href: "https://www.linkedin.com/in/sam-yung-14ba7b1a4/",
-    name: "LinkedIn"
+    href: 'https://www.linkedin.com/in/sam-yung-14ba7b1a4/',
+    name: 'LinkedIn',
   },
   {
     icon: Github,
-    href: "https://github.com/samyung0",
-    name: "Github"
+    href: 'https://github.com/samyung0',
+    name: 'Github',
   },
   {
     icon: Instagram,
-    href: "https://www.instagram.com/async12/",
-    name: "Instagram"
+    href: 'https://www.instagram.com/async12/',
+    name: 'Instagram',
   },
 ];
 
@@ -27,7 +27,7 @@ export default function ContacLinks() {
         {list.map((item) => {
           return (
             <ContactLinkItem key={item.href} href={item.href} name={item.name}>
-              <item.icon className="md:size-[20px] size-[15px]"></item.icon>
+              <item.icon className="size-[15px] md:size-[20px]"></item.icon>
             </ContactLinkItem>
           );
         })}

@@ -1,6 +1,6 @@
-import { Footer } from "~/components/Footer"
-import { PublicNav } from "~/components/Nav/PublicNav"
-import ContactPage from "~/containers/ContactPage"
+import { Footer } from '~/components/Footer';
+import { PublicNav } from '~/components/Nav/PublicNav';
+import ContactPage from '~/containers/ContactPage';
 
 const page = () => {
   return (
@@ -11,7 +11,7 @@ const page = () => {
       </div>
       <Footer />
     </main>
-  )
-}
+  );
+};
 
 export default page;

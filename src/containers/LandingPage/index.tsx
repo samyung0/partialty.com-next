@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { motion, useAnimate } from "framer-motion";
-import SecondHalfContainer from "./SecondHalfContainer";
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { motion, useAnimate } from 'framer-motion';
+import SecondHalfContainer from './SecondHalfContainer';
 
 interface LandingPageProps {
   HeroContainer: React.ReactNode;
@@ -17,11 +17,11 @@ export default function LandingPage({ HeroContainer }: LandingPageProps) {
         { translateY: translateY },
         {
           duration: 0.5,
-          type: "spring",
-        },
+          type: 'spring',
+        }
       );
     },
-    [animate, scope],
+    [animate, scope]
   );
 
   const [initialX, setInitialX] = useState<number | null>(null);
@@ -44,15 +44,11 @@ export default function LandingPage({ HeroContainer }: LandingPageProps) {
     (deltaY: number) => {
       if (page === 0 && deltaY > 0) {
         setPage(1);
-      } else if (
-        page === 1 &&
-        secondHalfOfPage.current?.scrollTop === 0 &&
-        deltaY < 0
-      ) {
+      } else if (page === 1 && secondHalfOfPage.current?.scrollTop === 0 && deltaY < 0) {
         setPage(0);
       }
     },
-    [page],
+    [page]
   );
 
   const moveTouch = useCallback(
@@ -77,10 +73,10 @@ export default function LandingPage({ HeroContainer }: LandingPageProps) {
         // sliding horizontally
         if (diffX > 50) {
           // swiped left
-          console.log("swiped left");
+          console.log('swiped left');
         } else {
           // swiped right
-          console.log("swiped right");
+          console.log('swiped right');
         }
       } else {
         // sliding vertically
@@ -94,11 +90,11 @@ export default function LandingPage({ HeroContainer }: LandingPageProps) {
 
       e.preventDefault();
     },
-    [initialX, initialY, logic],
+    [initialX, initialY, logic]
   );
 
   useEffect(() => {
-    animation(page === 1 ? "-100dvh" : "0dvh");
+    animation(page === 1 ? '-100dvh' : '0dvh');
   }, [animation, page]);
 
   return (
@@ -113,8 +109,8 @@ export default function LandingPage({ HeroContainer }: LandingPageProps) {
     >
       <div
         onFocus={() => {
-          const main = document.getElementById("main");
-          if (main) document.getElementById("main")!.scrollTop = 0;
+          const main = document.getElementById('main');
+          if (main) document.getElementById('main')!.scrollTop = 0;
           if (secondHalfOfPage.current) secondHalfOfPage.current.scrollTop = 0;
           logic(-1);
         }}
@@ -124,8 +120,8 @@ export default function LandingPage({ HeroContainer }: LandingPageProps) {
       <div
         ref={secondHalfOfPage}
         onFocus={() => {
-          const main = document.getElementById("main");
-          if (main) document.getElementById("main")!.scrollTop = 0;
+          const main = document.getElementById('main');
+          if (main) document.getElementById('main')!.scrollTop = 0;
           logic(1);
         }}
         className="max-h-[100dvh] overflow-auto"

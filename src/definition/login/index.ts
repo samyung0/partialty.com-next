@@ -1,18 +1,18 @@
-import z from "zod";
+import z from 'zod';
 
 export const LoginFormSchema = z.object({
   email: z
     .string()
     .trim()
-    .min(1, "Please enter your email.")
-    .max(256, "Email is too long")
-    .email("The email address is badly formatted."),
+    .min(1, 'Wheres your email bro.')
+    .max(256, 'Email is too long')
+    .email("Nah, this ain't an email."),
   password: z
     .string()
     .trim()
-    .min(1, "Please enter your password.")
-    .min(8, "You password must have 8 characters or more.")
-    .max(36, "Password is too long"),
+    .min(1, 'Where the password bro.')
+    .min(8, 'Too short, make it at least 8 charcacters.')
+    .max(36, 'Too long, limit it to 36 characters.'),
 });
 
 export type LoginFormState =

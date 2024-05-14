@@ -9,7 +9,6 @@ dotenv.config({ path: '../.env.production.local' });
 if (!process.env.TURSO_URL) throw new Error('Cannot retrieve database url! Check env variables!');
 if (!process.env.TURSO_TOKEN) throw new Error('Cannot retrieve database token! Check env variables!');
 
-
 const turso = createClient({ url: process.env.TURSO_URL, authToken: process.env.TURSO_TOKEN });
 const drizzleClient = drizzle(turso, { schema: schemaExport });
 

@@ -1,14 +1,14 @@
-import { GitHub, Google } from "arctic";
-import { Lucia, TimeSpan } from "lucia";
-import { LibSQLAdapter } from "@lucia-auth/adapter-sqlite";
-import { client } from "~/server/db";
+import { GitHub, Google } from 'arctic';
+import { Lucia, TimeSpan } from 'lucia';
+import { LibSQLAdapter } from '@lucia-auth/adapter-sqlite';
+import { client } from '~/server/db';
 
-import { Profiles, type NewProfile } from "db/schema/profiles";
-import { User_session, type New_user_session } from "db/schema/user_session";
+import { Profiles, type NewProfile } from 'db/schema/profiles';
+import { User_session, type New_user_session } from 'db/schema/user_session';
 
 const adapter = new LibSQLAdapter(client, {
-  user: "profiles",
-  session: "user_session",
+  user: 'profiles',
+  session: 'user_session',
 });
 
 export const lucia = new Lucia(adapter, {
@@ -34,38 +34,34 @@ export const lucia = new Lucia(adapter, {
       created_at: session.created_at,
     };
   },
-  sessionExpiresIn: new TimeSpan(2, "w"),
+  sessionExpiresIn: new TimeSpan(2, 'w'),
   sessionCookie: {
     expires: false,
     attributes: {
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.NODE_ENV === 'production',
     },
   },
 });
 
-export const github = new GitHub(
-  process.env.GITHUB_ID!,
-  process.env.GITHUB_SECRET!,
-  {
-    redirectURI:
-      process.env.NODE_ENV === "production"
-        ? "https://www.partialty.com/login/github/callback/"
-        : "http://localhost:3000/login/github/callback",
-  },
-);
+export const github = new GitHub(process.env.GITHUB_ID!, process.env.GITHUB_SECRET!, {
+  redirectURI:
+    process.env.NODE_ENV === 'production'
+      ? 'https://www.partialty.com/login/github/callback/'
+      : 'http://localhost:3000/login/github/callback',
+});
 
 export const google = new Google(
   process.env.GOOGLE_ID!,
   process.env.GOOGLE_SECRET!,
-  process.env.NODE_ENV === "production"
-    ? "https://www.partialty.com/login/google/callback/"
-    : "http://localhost:3000/login/google/callback",
+  process.env.NODE_ENV === 'production'
+    ? 'https://www.partialty.com/login/google/callback/'
+    : 'http://localhost:3000/login/google/callback'
 );
 
-declare module "lucia" {
+declare module 'lucia' {
   interface Register {
     Lucia: typeof lucia;
-    DatabaseUserAttributes: Omit<NewProfile, "id">;
-    DatabaseSessionAttributes: Omit<New_user_session, "id">;
+    DatabaseUserAttributes: Omit<NewProfile, 'id'>;
+    DatabaseSessionAttributes: Omit<New_user_session, 'id'>;
   }
 }

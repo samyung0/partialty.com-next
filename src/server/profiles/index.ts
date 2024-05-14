@@ -1,27 +1,28 @@
-"use server";
+'use server';
 
-import { generateIdFromEntropySize, Session, User } from "lucia";
-import {
-  SignupFormCombinedSchema,
-  SignupFormCombinedState,
-} from "~/definition/signup";
-import { LibsqlError } from "@libsql/client/web";
-import { db } from "../db";
-import { profiles } from "db/schema/profiles";
-import { lucia } from "~/auth/lucia";
-import { cookies } from "next/headers";
-import { LoginFormSchema, LoginFormState } from "~/definition/login";
-import { eq } from "drizzle-orm";
-import { z } from "zod";
-import { cache } from "react";
-import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
-import { getSession } from "~/auth/getSession";
+import { generateIdFromEntropySize, Session, User } from 'lucia';
+import { BioFormCombinedSchema, PasswordFormSchema, type SignupFormCombinedState } from '~/definition/signup';
+import { LibsqlError } from '@libsql/client/web';
+import { db } from '../db';
+import { profiles } from 'db/schema/profiles';
+import { lucia } from '~/auth/lucia';
+import { cookies } from 'next/headers';
+import { LoginFormSchema, type LoginFormState } from '~/definition/login';
+import { eq } from 'drizzle-orm';
+import { type z } from 'zod';
+import { getSession } from '~/auth/getSession';
 
-export const createUser = async (
-  values: z.infer<typeof SignupFormCombinedSchema>,
-): Promise<SignupFormCombinedState> => {
-  const validatedFields = SignupFormCombinedSchema.safeParse(values);
+export const getEmail = async (email: string) => {
+  try {
+    return (await db.select({ id: profiles.id }).from(profiles).where(eq(profiles.email, email)))[0]?.id;
+  } catch (e) {
+    return undefined;
+  }
+};
+
+export const passwordStage = async (values: z.infer<typeof PasswordFormSchema>): Promise<SignupFormCombinedState> => {
+  // stage 1 of signup, do not create an actual user
+  const validatedFields = PasswordFormSchema.safeParse(values);
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
@@ -30,23 +31,42 @@ export const createUser = async (
     };
   }
 
-  const passwordHash = (await fetch(
-    "https://api.partialty.com/auth/signup/passwordToHash",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        password: validatedFields.data.password,
-        time: Date.now(),
-      }),
-    },
-  ).then((hash) => hash.json())) as {
+  if (await getEmail(validatedFields.data.email)) {
+    return {
+      formErrors: ['Email already exists! Try another one!'],
+      success: false,
+    };
+  }
+
+  return {
+    success: true,
+  };
+};
+
+export const createUser = async (values: z.infer<typeof BioFormCombinedSchema>): Promise<SignupFormCombinedState> => {
+  const validatedFields = BioFormCombinedSchema.safeParse(values);
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      formErrors: validatedFields.error.flatten().formErrors,
+      success: false,
+    };
+  }
+
+  const passwordHash = (await fetch('https://api.partialty.com/auth/signup/passwordToHash', {
+    method: 'POST',
+    body: JSON.stringify({
+      password: validatedFields.data.password,
+      time: Date.now(),
+    }),
+  }).then((hash) => hash.json())) as {
     success: boolean;
     data?: string;
     message?: string;
   };
   if (!passwordHash.success)
     return {
-      formErrors: [passwordHash.message ?? ""],
+      formErrors: [passwordHash.message ?? ''],
       success: false,
     };
 
@@ -59,7 +79,7 @@ export const createUser = async (
       email: validatedFields.data.email,
       nickname: validatedFields.data.nickname,
       // TODO: avatar_url
-      avatar_url: "",
+      avatar_url: '',
       email_verified: false,
     });
 
@@ -71,11 +91,7 @@ export const createUser = async (
       idle_expires: 0n,
     });
     const sessionCookie = lucia.createSessionCookie(session.id);
-    cookies().set(
-      sessionCookie.name,
-      sessionCookie.value,
-      sessionCookie.attributes,
-    );
+    cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
 
     return {
       success: true,
@@ -83,23 +99,19 @@ export const createUser = async (
   } catch (e) {
     if (e instanceof LibsqlError) {
       if (
-        e.message.includes("UNIQUE constraint failed: user_key.id") ||
-        e.message.includes("UNIQUE constraint failed: profiles.email")
+        e.message.includes('UNIQUE constraint failed: user_key.id') ||
+        e.message.includes('UNIQUE constraint failed: profiles.email')
       )
         return { formErrors: [`Error! User already exists`], success: false };
     }
     return {
-      formErrors: [
-        "An unkown error occured! Error: " + (e as Error).toString(),
-      ],
+      formErrors: ['An unkown error occured! Error: ' + (e as Error).toString()],
       success: false,
     };
   }
 };
 
-export const login = async (
-  values: z.infer<typeof LoginFormSchema>,
-): Promise<LoginFormState> => {
+export const login = async (values: z.infer<typeof LoginFormSchema>): Promise<LoginFormState> => {
   try {
     const validatedFields = LoginFormSchema.safeParse(values);
     if (!validatedFields.success) {
@@ -110,36 +122,20 @@ export const login = async (
       };
     }
 
-    const existingUser = (
-      await db
-        .select()
-        .from(profiles)
-        .where(eq(profiles.email, validatedFields.data.email))
-    )[0];
+    const existingUser = (await db.select().from(profiles).where(eq(profiles.email, validatedFields.data.email)))[0];
 
-    console.log(
-      JSON.stringify({
+    const passwordVerification = (await fetch('https://api.partialty.com/auth/login/hashToPassword', {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
         password: validatedFields.data.password,
-        hash: existingUser?.password ?? "",
+        hash: existingUser?.password ?? '',
         time: Date.now(),
       }),
-    );
-
-    const passwordVerification = (await fetch(
-      "https://api.partialty.com/auth/login/hashToPassword",
-      {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          password: validatedFields.data.password,
-          hash: existingUser?.password ?? "",
-          time: Date.now(),
-        }),
-      },
-    ).then((hash) => hash.json())) as {
+    }).then((hash) => hash.json())) as {
       error: boolean;
       isVerified: boolean;
       message?: string;
@@ -157,13 +153,13 @@ export const login = async (
       // If usernames are public, you may outright tell the user that the username is invalid.
       return {
         success: false,
-        formErrors: ["Incorrect email or password"],
+        formErrors: ['Incorrect email or password'],
       };
     }
 
     if (passwordVerification.error || !passwordVerification.isVerified) {
       return {
-        formErrors: [passwordVerification.message ?? ""],
+        formErrors: [passwordVerification.message ?? ''],
         success: false,
       };
     }
@@ -176,16 +172,14 @@ export const login = async (
       idle_expires: 0n,
     });
     const sessionCookie = lucia.createSessionCookie(session.id);
-    cookies().set(
-      sessionCookie.name,
-      sessionCookie.value,
-      sessionCookie.attributes,
-    );
+    cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+
+    return {
+      success: true,
+    };
   } catch (e) {
     return {
-      formErrors: [
-        "An unkown error occured! Error: " + (e as Error).toString(),
-      ],
+      formErrors: ['An unkown error occured! Error: ' + (e as Error).toString()],
       success: false,
     };
   }
@@ -195,21 +189,17 @@ export const logout = async () => {
   const { session } = await getSession();
   if (!session) {
     return {
-      error: "Unauthorized",
-      success: false
-    }
+      error: 'Unauthorized',
+      success: false,
+    };
   }
 
   await lucia.invalidateSession(session.id);
 
   const sessionCookie = lucia.createBlankSessionCookie();
-  cookies().set(
-    sessionCookie.name,
-    sessionCookie.value,
-    sessionCookie.attributes,
-  );
+  cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
 
   return {
-    success: true
-  }
+    success: true,
+  };
 };

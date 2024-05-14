@@ -14,7 +14,7 @@ export const user_session = sqliteTable('user_session', {
   idle_expires: blob('idle_expires', {
     mode: 'bigint',
   }).notNull(),
-  expires_at: integer("expires_at")
+  expires_at: integer('expires_at'),
 });
 
 export type User_session = InferSelectModel<typeof user_session>;

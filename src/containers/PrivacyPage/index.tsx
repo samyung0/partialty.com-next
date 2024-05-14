@@ -1,4 +1,4 @@
-export default function PrivacyPage ()  {
+export default function PrivacyPage() {
   return (
     <main className="prose mx-auto max-w-7xl dark:prose-invert">
       <div data-custom-className="body">
@@ -2602,7 +2602,9 @@ export default function PrivacyPage ()  {
                                                                       </a>
                                                                       <span>
                                                                         <span>
-                                                                          <span data-custom-className="body_text">.</span>
+                                                                          <span data-custom-className="body_text">
+                                                                            .
+                                                                          </span>
                                                                         </span>
                                                                       </span>
                                                                     </div>
@@ -3898,7 +3900,10 @@ export default function PrivacyPage ()  {
                                                                             </span>
                                                                           </span>
                                                                         </span>
-                                                                        <a data-custom-className="link" href="#whoshare">
+                                                                        <a
+                                                                          data-custom-className="link"
+                                                                          href="#whoshare"
+                                                                        >
                                                                           <span>
                                                                             <span>
                                                                               WHEN AND WITH WHOM DO WE SHARE YOUR
@@ -5205,7 +5210,9 @@ export default function PrivacyPage ()  {
                                                                           </a>
                                                                           <span></span>
                                                                           <span>
-                                                                            <span data-custom-className="body_text">.</span>
+                                                                            <span data-custom-className="body_text">
+                                                                              .
+                                                                            </span>
                                                                           </span>
                                                                         </div>
                                                                         <div>
@@ -6242,7 +6249,9 @@ export default function PrivacyPage ()  {
                                                                               </span>
                                                                             </span>
                                                                           </span>
-                                                                          <span data-custom-className="body_text">.</span>
+                                                                          <span data-custom-className="body_text">
+                                                                            .
+                                                                          </span>
                                                                         </div>
                                                                       </div>
                                                                     </div>

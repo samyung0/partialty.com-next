@@ -1,23 +1,19 @@
-"use client"
-import {
-  FileText,
-  Home,
-  X,
-} from "lucide-react";
-import Link from "next/link";
-import { Dispatch, SetStateAction, Suspense} from "react";
-import { ThemeSwitch } from "~/components/ThemeSwitch";
+'use client';
+import { FileText, Home, X } from 'lucide-react';
+import Link from 'next/link';
+import { type Dispatch, type SetStateAction, Suspense } from 'react';
+import { ThemeSwitch } from '~/components/ThemeSwitch';
 // import { SideNavUserIcon, SideNavUserNav } from "./SideNavUser";
-import { Loader } from "~/components/Loader";
+import { Loader } from '~/components/Loader';
 
 export const SideNav = ({
   setShowSideNav,
   SideNavUserIcon,
-  SideNavUserNav
+  SideNavUserNav,
 }: {
   setShowSideNav: Dispatch<SetStateAction<boolean>>;
-  SideNavUserIcon: React.ReactNode,
-  SideNavUserNav: React.ReactNode
+  SideNavUserIcon: React.ReactNode;
+  SideNavUserNav: React.ReactNode;
 }) => {
   return (
     <nav
@@ -30,29 +26,23 @@ export const SideNav = ({
         onClick={() => {
           setShowSideNav(false);
         }}
-        className={"absolute right-5 top-5"}
+        className={'absolute right-5 top-5'}
       >
         <X className="size-[20px]" />
       </button>
       <div
         className={
-          "w-[80%] overflow-auto  shadow shadow-slate-200/80 ring-1 ring-slate-900/5  dark:shadow-slate-600/80"
+          'w-[80%] overflow-auto  shadow shadow-slate-200/80 ring-1 ring-slate-900/5  dark:shadow-slate-600/80'
         }
         onClick={(e) => e.stopPropagation()}
       >
         <ul className="mx-auto flex w-[90%] flex-col gap-6 py-6">
           <li className="flex items-center gap-6">
             <ThemeSwitch />
-            <Suspense fallback={<Loader />}>
-              {SideNavUserIcon}
-            </Suspense>
+            <Suspense fallback={<Loader />}>{SideNavUserIcon}</Suspense>
           </li>
           <li>
-            <Link
-              prefetch
-              href={"/members/dashboard/"}
-              className="flex items-center gap-4"
-            >
+            <Link prefetch href={'/members/dashboard/'} className="flex items-center gap-4">
               Home
               <span>
                 <Home className="size-[20px]" />
@@ -60,20 +50,14 @@ export const SideNav = ({
             </Link>
           </li>
           <li>
-            <Link
-              prefetch
-              href={"/catalog/"}
-              className="flex items-center gap-4"
-            >
+            <Link prefetch href={'/catalog/'} className="flex items-center gap-4">
               Courses
               <span>
                 <FileText className="size-[20px]" />
               </span>
             </Link>
           </li>
-          <Suspense>
-            {SideNavUserNav}
-          </Suspense>
+          <Suspense>{SideNavUserNav}</Suspense>
         </ul>
       </div>
     </nav>

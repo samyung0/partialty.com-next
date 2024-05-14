@@ -1,10 +1,13 @@
 export default function CookiePolicyPage() {
-  return <main className="prose mx-auto max-w-7xl dark:prose-invert">
-    <div data-custom-class="body">
+  return (
+    <main className="prose mx-auto max-w-7xl dark:prose-invert">
+      <div data-custom-class="body">
         <div>
           <strong>
             <span>
-              <h1 className="font-mosk" data-custom-class="title">COOKIE POLICY</h1>
+              <h1 className="font-mosk" data-custom-class="title">
+                COOKIE POLICY
+              </h1>
             </span>
           </strong>
         </div>
@@ -104,12 +107,12 @@ export default function CookiePolicyPage() {
           <span>
             <span>
               <span data-custom-class="body_text">
-                Cookies set by the website owner (in this case, <span>Patialty.com, Inc.</span>) are
-                called "first-party cookies." Cookies set by parties other than the website owner are called
-                "third-party cookies." Third-party cookies enable third-party features or functionality to be provided
-                on or through the website (e.g., advertising, interactive content, and analytics). The parties that set
-                these third-party cookies can recognize your computer both when it visits the website in question and
-                also when it visits certain other websites.
+                Cookies set by the website owner (in this case, <span>Patialty.com, Inc.</span>) are called "first-party
+                cookies." Cookies set by parties other than the website owner are called "third-party cookies."
+                Third-party cookies enable third-party features or functionality to be provided on or through the
+                website (e.g., advertising, interactive content, and analytics). The parties that set these third-party
+                cookies can recognize your computer both when it visits the website in question and also when it visits
+                certain other websites.
               </span>
             </span>
           </span>
@@ -134,12 +137,11 @@ export default function CookiePolicyPage() {
             <span>
               <span data-custom-class="body_text">
                 We use first-<span></span> and third-
-                <span></span>party cookies for several reasons. Some cookies are
-                required for technical reasons in order for our Website to operate, and we refer to these as "essential"
-                or "strictly necessary" cookies. Other cookies also enable us to track and target the interests of our
-                users to enhance the experience on our Online Properties. <span></span>Third
-                parties serve cookies through our Website for advertising, analytics, and other purposes.{' '}
-                <span></span>This is described in more detail below.
+                <span></span>party cookies for several reasons. Some cookies are required for technical reasons in order
+                for our Website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other
+                cookies also enable us to track and target the interests of our users to enhance the experience on our
+                Online Properties. <span></span>Third parties serve cookies through our Website for advertising,
+                analytics, and other purposes. <span></span>This is described in more detail below.
               </span>
             </span>
           </span>
@@ -237,10 +239,7 @@ export default function CookiePolicyPage() {
           <p>
             <span data-custom-class="body_text"></span>
           </p>
-          <section
-            data-custom-class="body_text"
-           
-          >
+          <section data-custom-class="body_text">
             <div>
               <table>
                 <tbody>
@@ -270,11 +269,7 @@ export default function CookiePolicyPage() {
                     <td>
                       <span>
                         Cloudflare{' '}
-                        <a
-                          href="https://www.cloudflare.com/privacypolicy/"
-                         
-                          target="_blank"
-                        >
+                        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">
                           View Service Privacy Policy
                         </a>{' '}
                       </span>
@@ -297,10 +292,7 @@ export default function CookiePolicyPage() {
             </div>
           </section>
           <p></p>
-          <section
-            data-custom-class="body_text"
-           
-          >
+          <section data-custom-class="body_text">
             <div>
               <table>
                 <tbody>
@@ -329,11 +321,7 @@ export default function CookiePolicyPage() {
                     <td>
                       <span>
                         reCAPTCHA{' '}
-                        <a
-                          href="https://policies.google.com/privacy"
-                         
-                          target="_blank"
-                        >
+                        <a href="https://policies.google.com/privacy" target="_blank">
                           View Service Privacy Policy
                         </a>{' '}
                       </span>
@@ -382,10 +370,7 @@ export default function CookiePolicyPage() {
           </p>
           <div>
             <span data-custom-class="body_text">
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -417,10 +402,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -452,10 +434,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -487,10 +466,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -522,10 +498,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -557,10 +530,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -592,10 +562,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -627,10 +594,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -662,10 +626,7 @@ export default function CookiePolicyPage() {
                   </table>
                 </div>
               </section>
-              <section
-                data-custom-class="body_text"
-               
-              >
+              <section data-custom-class="body_text">
                 <div>
                   <table>
                     <tbody>
@@ -910,9 +871,7 @@ export default function CookiePolicyPage() {
                 <span>Website Storage Settings Panel</span>
               </a>
             </span>
-            <span>
-              . You can also control Flash Cookies by going to the&nbsp;
-            </span>
+            <span>. You can also control Flash Cookies by going to the&nbsp;</span>
             <span>
               <a
                 data-custom-class="link"
@@ -1077,8 +1036,7 @@ export default function CookiePolicyPage() {
               <span>
                 <span data-custom-class="body_text">
                   If you have any questions about our use of cookies or other technologies, please
-                  <span></span> email us at <span>customer@partialty.com</span>{' '}
-                  or by post to<span></span>:
+                  <span></span> email us at <span>customer@partialty.com</span> or by post to<span></span>:
                 </span>
               </span>
             </span>
@@ -1126,5 +1084,6 @@ export default function CookiePolicyPage() {
           </span>
         </div>
       </div>
-  </main>
+    </main>
+  );
 }

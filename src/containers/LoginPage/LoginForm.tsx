@@ -1,38 +1,27 @@
-"use client";
+'use client';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { BaseSyntheticEvent, useEffect, useRef, useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { type BaseSyntheticEvent, useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { type z } from 'zod';
 
-import { Button } from "~/components/Button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "~/components/Form";
-import { Input } from "~/components/Input";
-import { Loader } from "~/components/Loader";
-import { LoginFormSchema, LoginFormState } from "~/definition/login";
-import { login } from "~/server/profiles";
+import { Button } from '~/components/Button';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '~/components/Form';
+import { Input } from '~/components/Input';
+import { Loader } from '~/components/Loader';
+import { LoginFormSchema, type LoginFormState } from '~/definition/login';
+import { login } from '~/server/profiles';
 
 const FormButton = ({ pending }: { pending: boolean }) => {
   return (
     <>
       {!pending && (
-        <Button
-          type="submit"
-          className="mx-auto flex rounded-lg p-3 !px-12 md:p-4"
-        >
+        <Button type="submit" className="mx-auto flex rounded-lg p-3 !px-12 md:p-4">
           Login
         </Button>
       )}
       {pending && (
-        <Button className="mx-auto flex rounded-lg p-3 !px-12 md:p-4">
+        <Button type="button" disabled className="mx-auto flex rounded-lg p-3 !px-12 md:p-4">
           <Loader />
         </Button>
       )}
@@ -52,12 +41,13 @@ export default function LoginForm() {
   const form = useForm<z.infer<typeof LoginFormSchema>>({
     resolver: zodResolver(LoginFormSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
   });
 
   const handleSubmit = async (e?: BaseSyntheticEvent) => {
+    if (loading) return;
     setLoading(true);
     await form.handleSubmit(async (e) => {
       const state = await login(e);
@@ -67,9 +57,7 @@ export default function LoginForm() {
   };
 
   useEffect(() => {
-    const subscription = form.watch((value, { name, type }) =>
-      setFormState(undefined),
-    );
+    const subscription = form.watch((value, { name, type }) => setFormState(undefined));
     return () => subscription.unsubscribe();
   }, [form]);
 
@@ -83,17 +71,13 @@ export default function LoginForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="Whats ur email"
-                  {...field}
-                  ref={firstField}
-                />
+                <Input placeholder="Whats ur email" {...field} ref={firstField} />
               </FormControl>
               {/* Client side validation error */}
               <FormMessage />
               {/* Error after submitting form */}
               {formState?.errors?.email && (
-                <FormMessage>{formState?.errors?.email}</FormMessage>
+                <p className="break-all text-sm font-medium text-tomato">{formState?.errors?.email}</p>
               )}
             </FormItem>
           )}
@@ -105,18 +89,14 @@ export default function LoginForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input
-                  type="password"
-                  placeholder="Whats ur password"
-                  {...field}
-                />
+                <Input type="password" placeholder="Whats ur password" {...field} />
               </FormControl>
               <FormMessage />
               {formState?.errors?.password && (
-                <FormMessage>{formState?.errors?.password}</FormMessage>
+                <p className="break-all text-sm font-medium text-tomato">{formState?.errors?.password}</p>
               )}
               {formState?.formErrors && (
-                <FormMessage>{formState?.formErrors}</FormMessage>
+                <p className="break-all text-sm font-medium text-tomato">{formState?.formErrors}</p>
               )}
             </FormItem>
           )}

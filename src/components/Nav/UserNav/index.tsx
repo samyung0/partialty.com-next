@@ -1,27 +1,15 @@
-import {
-  ChevronDown,
-  Home,
-  PencilLine,
-  Shield,
-  User2,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import roles from "~/const/roles";
-import { cn } from "~/lib/utils";
-import { getUser } from "~/auth/getUser";
-import { LogoutButtonUserNav } from "./LogoutButtonUserNav";
+import { ChevronDown, Home, PencilLine, Shield, User2 } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import type roles from '~/const/roles';
+import { cn } from '~/lib/utils';
+import { getUser } from '~/auth/getUser';
+import { LogoutButtonUserNav } from './LogoutButtonUserNav';
 
-export function Dropdown({
-  role,
-  avatar_url,
-}: {
-  role: (typeof roles)[number];
-  avatar_url: string;
-}) {
+export function Dropdown({ role, avatar_url }: { role: (typeof roles)[number]; avatar_url: string }) {
   return (
     <div className=" px-4 py-2 [&:hover>div>span:last-child]:rotate-180 [&:hover>div]:flex">
-      <div className={"flex gap-2"}>
+      <div className={'flex gap-2'}>
         <span className="relative">
           <Image
             src={avatar_url}
@@ -31,9 +19,9 @@ export function Dropdown({
             className="rounded-full object-contain"
             referrerPolicy="no-referrer"
           />
-          {role !== "free" && (
+          {role !== 'free' && (
             <Image
-              src={"/img/crown.png"}
+              src={'/img/crown.png'}
               width={20}
               height={20}
               alt="Crown"
@@ -44,7 +32,7 @@ export function Dropdown({
 
         <span
           className={
-            "inline-flex items-center text-primary-dark-gray transition-transform dark:text-background-light-gray"
+            'inline-flex items-center text-primary-dark-gray transition-transform dark:text-background-light-gray'
           }
         >
           <ChevronDown className="size-[16px]" />
@@ -53,7 +41,7 @@ export function Dropdown({
       <div className="absolute left-[0] top-[100%] z-[50] hidden w-[180px] -translate-x-[50%] pt-2 font-bold xl:left-[50%]">
         <div
           className={
-            "flex-1 rounded-xl border-2 border-primary-dark-gray bg-background-light-gray text-primary-dark-gray dark:border-disabled-dark dark:bg-highlight-dark dark:text-background-light-gray"
+            'flex-1 rounded-xl border-2 border-primary-dark-gray bg-background-light-gray text-primary-dark-gray dark:border-disabled-dark dark:bg-highlight-dark dark:text-background-light-gray'
           }
         >
           <ul className="flex flex-col p-2">
@@ -63,15 +51,12 @@ export function Dropdown({
             <ListItem title="Profile" href="/members/profile">
               <User2 className="size-[20px]" />
             </ListItem>
-            {role !== "free" && (
-              <ListItem
-                title="Creator"
-                href="https://qwik.partialty.com/creator"
-              >
+            {role !== 'free' && (
+              <ListItem title="Creator" href="https://qwik.partialty.com/creator">
                 <PencilLine className="size-[20px]" />
               </ListItem>
             )}
-            {role === "admin" && (
+            {role === 'admin' && (
               <ListItem title="Admin" href="https://qwik.partialty.com/admin/">
                 <Shield className="size-[20px]" />
               </ListItem>
@@ -86,19 +71,10 @@ export function Dropdown({
   );
 }
 
-const ListItem = ({
-  className,
-  title,
-  children,
-  ...props
-}: React.ComponentPropsWithoutRef<"a">) => {
+const ListItem = ({ className, title, children, ...props }: React.ComponentPropsWithoutRef<'a'>) => {
   return (
     <li className="p-2">
-      <Link
-        prefetch
-        href={props.href ?? ""}
-        className={cn("flex items-center gap-3", className)}
-      >
+      <Link prefetch href={props.href ?? ''} className={cn('flex items-center gap-3', className)}>
         <span>{children}</span>
         <span className="whitespace-nowrap">{title}</span>
       </Link>
@@ -111,14 +87,14 @@ export const UserNav = async () => {
   return (
     <>
       {user && (
-        <li className={"relative flex gap-3"}>
+        <li className={'relative flex gap-3'}>
           <Dropdown role={user.role!} avatar_url={user.avatar_url} />
         </li>
       )}
       {!user && (
         <li>
           <Link
-            href={"/login/"}
+            href={'/login/'}
             prefetch
             className="whitespace-nowrap rounded-[2rem] bg-disabled-dark px-6 py-2 font-normal tracking-normal text-background-light-gray shadow-md"
           >

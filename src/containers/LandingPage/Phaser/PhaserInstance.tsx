@@ -1,25 +1,15 @@
-"use client";
+'use client';
 
-import { Dispatch, SetStateAction, useRef } from "react";
-import GameManager, { IRefPhaserGame } from "./GameManager";
-import { SpriteProps } from "../Hero";
+import { type Dispatch, type SetStateAction, useRef } from 'react';
+import GameManager, { type IRefPhaserGame } from './GameManager';
+import { type SpriteProps } from '../Hero';
 
-export default function PhaserInstance({
-  setSprite,
-}: {
-  setSprite: Dispatch<SetStateAction<SpriteProps>>;
-}) {
+export default function PhaserInstance({ setSprite }: { setSprite: Dispatch<SetStateAction<SpriteProps>> }) {
   const phaserRef = useRef<IRefPhaserGame | null>(null);
 
   const currentScene = (scene: Phaser.Scene) => {
     // console.log(scene);
   };
 
-  return (
-    <GameManager
-      setSprite={setSprite}
-      ref={phaserRef}
-      currentActiveScene={currentScene}
-    />
-  );
+  return <GameManager setSprite={setSprite} ref={phaserRef} currentActiveScene={currentScene} />;
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import * as dotenv from "dotenv"
+import * as dotenv from 'dotenv';
 import type { Config } from 'drizzle-kit';
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 dotenv.config({ path: '.env.development.local' });

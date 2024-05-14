@@ -1,4 +1,4 @@
-import z from "zod";
+import z from 'zod';
 
 export const CloudinarySchema = z.object({
   width: z.number(),

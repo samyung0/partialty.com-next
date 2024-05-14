@@ -1,54 +1,40 @@
-import z from "zod";
-import { CloudinarySchema } from "../cloudinary";
+import z from 'zod';
+import { CloudinarySchema } from '../cloudinary';
 
-export const SignupFormSchema = z
-  .object({
-    email: z
-      .string()
-      .trim()
-      .min(1, "Please enter your email.")
-      .max(256, "Email is too long")
-      .email("The email address is badly formatted."),
-    password: z
-      .string()
-      .trim()
-      .min(1, "Please enter your password.")
-      .min(8, "You password must have 8 characters or more.")
-      .max(36, "Password is too long"),
-    rePassword: z.string().min(1, "Please re-enter your password."),
-  })
-  .refine(
-    (obj) => obj.rePassword === obj.password,
-    "The two passwords are not the same!",
-  );
+export const PasswordFormSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, 'Wheres your email bro.')
+    .max(256, 'Email is too long')
+    .email("Nah, this ain't an email."),
+  password: z
+    .string()
+    .trim()
+    .min(1, 'Where the password bro.')
+    .min(8, 'Too short, make it at least 8 charcacters.')
+    .max(36, 'Too long, limit it to 36 characters.'),
+  rePassword: z.string().trim().min(1, 'Gotta re-enter your password.'),
+});
 
-export const SignupFormCombinedSchema = z
-  .object({
-    email: z
-      .string()
-      .trim()
-      .min(1, "Please enter your email.")
-      .max(256, "Email is too long")
-      .email("The email address is badly formatted."),
-    password: z
-      .string()
-      .trim()
-      .min(1, "Please enter your password.")
-      .min(8, "You password must have 8 characters or more.")
-      .max(36, "Password is too long"),
-    rePassword: z.string().min(1, "Please re-enter your password."),
-    avatar: CloudinarySchema,
-    nickname: z
-      .string()
-      .trim()
-      .min(1, "You must enter a nickname!")
-      .max(50, "Nickname is too long"),
-    customAvatar: z.boolean(),
-  })
-  .refine(
-    (obj) => obj.rePassword === obj.password,
-    "The two passwords are not the same!",
-  );
+export const BioFormCombinedSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, 'Wheres your email bro.')
+    .max(256, 'Email is too long')
+    .email("Nah, this ain't an email."),
+  password: z
+    .string()
+    .trim()
+    .min(1, 'Where the password bro.')
+    .min(8, 'Too short, make it at least 8 charcacters.')
+    .max(36, 'Too long, limit it to 36 characters.'),
+  rePassword: z.string().trim().min(1, 'Gotta re-enter your password.'),
+  avatar: z.string(),
+  nickname: z.string().trim().min(1, 'Make yourself a nice nickname.').max(50, 'Too long, limit it to 50 characters.'),
+  customAvatar: z.boolean(),
+});
 
 export type SignupFormCombinedState =
   | {
@@ -61,6 +47,6 @@ export type SignupFormCombinedState =
       };
       formErrors?: string[];
       message?: string;
-      success: boolean
+      success: boolean;
     }
   | undefined;

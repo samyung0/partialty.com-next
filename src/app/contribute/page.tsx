@@ -1,6 +1,6 @@
-import { Footer } from "~/components/Footer";
-import { PublicNav } from "~/components/Nav/PublicNav";
-import ContributePage from "~/containers/ContributePage";
+import { Footer } from '~/components/Footer';
+import { PublicNav } from '~/components/Nav/PublicNav';
+import ContributePage from '~/containers/ContributePage';
 
 const App = () => {
   return (

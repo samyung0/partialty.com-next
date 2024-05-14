@@ -1,6 +1,6 @@
-import { Footer } from "~/components/Footer";
-import { PublicNav } from "~/components/Nav/PublicNav";
-import SuggestionPage from "~/containers/SuggestionPage";
+import { Footer } from '~/components/Footer';
+import { PublicNav } from '~/components/Nav/PublicNav';
+import SuggestionPage from '~/containers/SuggestionPage';
 
 const Page = () => {
   return (

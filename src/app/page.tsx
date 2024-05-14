@@ -1,5 +1,5 @@
-import LandingPage from "~/containers/LandingPage";
-import HeroContainer from "~/containers/LandingPage/HeroContainer";
+import LandingPage from '~/containers/LandingPage';
+import HeroContainer from '~/containers/LandingPage/HeroContainer';
 
 const page = () => {
   return (
@@ -11,4 +11,4 @@ const page = () => {
 
 export default page;
 
-export const runtime = "edge";
+export const runtime = 'edge';
