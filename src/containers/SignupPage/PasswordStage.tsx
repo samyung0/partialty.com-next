@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { type z } from 'zod';
 import { type BioFormCombinedSchema } from '~/definition/signup';
+import { redirect } from 'next/navigation';
 
 interface Props {
   setState: (values: Partial<z.infer<typeof BioFormCombinedSchema>>) => any;

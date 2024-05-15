@@ -12,6 +12,7 @@ export const profiles = sqliteTable('profiles', {
   stripe_id: text('stripe_id'),
   username: text('username'),
   avatar_url: text('avatar_url').notNull(),
+  cloudinary_public_id: text("cloudinary_public_id"),
   github_id: text('github_id'),
   google_id: text('google_id'),
   nickname: text('nickname').notNull(),

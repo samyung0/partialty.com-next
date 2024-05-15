@@ -1,6 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import { type BaseSyntheticEvent, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { type z } from 'zod';
@@ -33,6 +34,7 @@ export default function LoginForm() {
   const firstField = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [formState, setFormState] = useState<LoginFormState>(undefined);
+  const router = useRouter();
 
   useEffect(() => {
     firstField.current?.focus();
@@ -49,10 +51,22 @@ export default function LoginForm() {
   const handleSubmit = async (e?: BaseSyntheticEvent) => {
     if (loading) return;
     setLoading(true);
-    await form.handleSubmit(async (e) => {
-      const state = await login(e);
-      setFormState(state);
-    })(e);
+    try {
+      await form.handleSubmit(async (e) => {
+        const state = await login(e);
+        if (state?.success) {
+          router.push('/');
+          return;
+        } else {
+          setFormState(state);
+        }
+      })(e);
+    } catch (e) {
+      setFormState({
+        success: false,
+        formErrors: [(e as any).toString()],
+      });
+    }
     setLoading(false);
   };
 

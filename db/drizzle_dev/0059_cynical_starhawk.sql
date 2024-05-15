@@ -1,0 +1,1 @@
+ALTER TABLE profiles ADD `cloudinary_public_id` text;

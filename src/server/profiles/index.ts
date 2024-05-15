@@ -11,6 +11,7 @@ import { LoginFormSchema, type LoginFormState } from '~/definition/login';
 import { eq } from 'drizzle-orm';
 import { type z } from 'zod';
 import { getSession } from '~/auth/getSession';
+import { uploadCloudinaryProfilePic } from '../cloudinary';
 
 export const getEmail = async (email: string) => {
   try {
@@ -43,7 +44,7 @@ export const passwordStage = async (values: z.infer<typeof PasswordFormSchema>):
   };
 };
 
-export const createUser = async (values: z.infer<typeof BioFormCombinedSchema>): Promise<SignupFormCombinedState> => {
+export const bioStage = async (values: z.infer<typeof BioFormCombinedSchema>): Promise<SignupFormCombinedState> => {
   const validatedFields = BioFormCombinedSchema.safeParse(values);
   if (!validatedFields.success) {
     return {
@@ -54,21 +55,39 @@ export const createUser = async (values: z.infer<typeof BioFormCombinedSchema>):
   }
 
   const passwordHash = (await fetch('https://api.partialty.com/auth/signup/passwordToHash', {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
     method: 'POST',
     body: JSON.stringify({
       password: validatedFields.data.password,
       time: Date.now(),
     }),
   }).then((hash) => hash.json())) as {
-    success: boolean;
+    error: boolean;
     data?: string;
     message?: string;
   };
-  if (!passwordHash.success)
+  if (passwordHash.error)
     return {
-      formErrors: [passwordHash.message ?? ''],
+      formErrors: [passwordHash.message ?? 'An unexpected error occured on the server side!'],
       success: false,
     };
+
+  const avatarInfo: {
+    avatar_url: string;
+    cloudinary_public_id: string | null;
+  } = {
+    avatar_url: validatedFields.data.avatar,
+    cloudinary_public_id: null,
+  };
+
+  if (validatedFields.data.customAvatar) {
+    const ret = await uploadCloudinaryProfilePic(validatedFields.data.avatar);
+    avatarInfo.avatar_url = ret.secure_url;
+    avatarInfo.cloudinary_public_id = ret.public_id;
+  }
 
   const userId = generateIdFromEntropySize(10);
 
@@ -78,15 +97,15 @@ export const createUser = async (values: z.infer<typeof BioFormCombinedSchema>):
       password: passwordHash.data,
       email: validatedFields.data.email,
       nickname: validatedFields.data.nickname,
-      // TODO: avatar_url
-      avatar_url: '',
+      cloudinary_public_id: avatarInfo.cloudinary_public_id,
+      avatar_url: avatarInfo.avatar_url,
       email_verified: false,
     });
 
     const session = await lucia.createSession(userId, {
-      user_id: userId,
-
       // not used, result of lucia auth v2
+
+      user_id: userId,
       active_expires: 0n,
       idle_expires: 0n,
     });
@@ -105,7 +124,7 @@ export const createUser = async (values: z.infer<typeof BioFormCombinedSchema>):
         return { formErrors: [`Error! User already exists`], success: false };
     }
     return {
-      formErrors: ['An unkown error occured! Error: ' + (e as Error).toString()],
+      formErrors: ['An unkown error occured! ' + (e as Error).toString()],
       success: false,
     };
   }

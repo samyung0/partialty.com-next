@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { type z } from 'zod';
 import { motion } from 'framer-motion';
 import { signupContext } from '~/context/SignupContext';

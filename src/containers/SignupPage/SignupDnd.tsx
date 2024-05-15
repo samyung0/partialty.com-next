@@ -1,12 +1,16 @@
 'use client';
 
 import { default as NextImage } from 'next/image';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'sonner';
+import { z } from 'zod';
+import { Skeleton } from '~/components/Skeleton';
 import { CLOUDINARY_MAX_IMG_SIZE } from '~/const/cloudinaryUpload';
 
 import defaultProfilePicsUrl from '~/const/defaultProfilePicsUrl';
+import { signupContext } from '~/context/SignupContext';
+import { BioFormCombinedSchema } from '~/definition/signup';
 import { cn } from '~/lib/utils';
 
 interface Props {
@@ -31,12 +35,18 @@ const handleReject = (rejectedFiles: any) => {
 };
 
 export default function SignupDnd({ error, setCustomAvatar }: Props) {
-  const [avatarIndex, setAvatarIndex] = useState(Math.floor(Math.random() * defaultProfilePicsUrl.length));
-  const [avatar, setAvatar] = useState(defaultProfilePicsUrl[avatarIndex]!);
+  const [avatarIndex, setAvatarIndex] = useState(-1);
+  const [avatar, setAvatar] = useState(defaultProfilePicsUrl[avatarIndex]);
+  const [imageLoading, setImageLoading] = useState(true);
 
   useEffect(() => {
-    setAvatar(defaultProfilePicsUrl[avatarIndex]!);
-  }, [avatarIndex]);
+    setAvatarIndex(Math.floor(Math.random() * defaultProfilePicsUrl.length));
+  }, []);
+
+  useEffect(() => {
+    setAvatar(defaultProfilePicsUrl[avatarIndex]);
+    setCustomAvatar(false, defaultProfilePicsUrl[avatarIndex] ?? "")
+  }, [avatarIndex, setCustomAvatar]);
 
   const onDrop = useCallback(
     (acceptedFiles: any, rejectedFiles: any, e: any) => {
@@ -82,11 +92,13 @@ export default function SignupDnd({ error, setCustomAvatar }: Props) {
   const handleRemoveCustomAvatar = useCallback(() => {
     setAvatarIndex(Math.floor(Math.random() * defaultProfilePicsUrl.length));
     setCustomAvatar(false, '');
+    setImageLoading(true);
   }, [setCustomAvatar]);
 
   const handleRandomizeAvatar = useCallback(() => {
     setAvatarIndex((avatarIndex + 1) % defaultProfilePicsUrl.length);
     setCustomAvatar(false, '');
+    setImageLoading(true);
   }, [setCustomAvatar, avatarIndex]);
 
   return (
@@ -102,13 +114,19 @@ export default function SignupDnd({ error, setCustomAvatar }: Props) {
         {...getRootProps()}
       >
         <div className="flex justify-center">
-          <NextImage
-            src={avatar}
-            width={100}
-            height={100}
-            alt="Default Profile"
-            className="size-[100px] rounded-full"
-          />
+          {avatarIndex > -1 && avatar && (
+            <NextImage
+              src={avatar}
+              width={100}
+              height={100}
+              alt="Default Profile"
+              className={cn('size-[100px] rounded-full', imageLoading && 'absolute')}
+              onLoad={() => {
+                setImageLoading(false);
+              }}
+            />
+          )}
+          {(avatarIndex === -1 || !avatar || imageLoading) && <Skeleton className="size-[100px] rounded-full" />}
         </div>
         <input id="DragAndDrop" {...getInputProps()} />
         {isDragAccept && <p className="text-sm">Drop it!</p>}

@@ -428,6 +428,13 @@
       "when": 1714977005876,
       "tag": "0060_wandering_katie_power",
       "breakpoints": true
+    },
+    {
+      "idx": 61,
+      "version": "5",
+      "when": 1715745208122,
+      "tag": "0061_wise_madelyne_pryor",
+      "breakpoints": true
     }
   ]
 }

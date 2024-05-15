@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { type BaseSyntheticEvent, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { type BaseSyntheticEvent, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { type z } from 'zod';
 
@@ -11,8 +11,9 @@ import { Input } from '~/components/Input';
 import { Loader } from '~/components/Loader';
 import { defaultSignupValue, signupContext } from '~/context/SignupContext';
 import { BioFormCombinedSchema, PasswordFormSchema, type SignupFormCombinedState } from '~/definition/signup';
-import { passwordStage } from '~/server/profiles';
+import { bioStage, passwordStage } from '~/server/profiles';
 import SignupDnd from './SignupDnd';
+import { redirect, useRouter } from 'next/navigation';
 
 const SignupButton = ({ pending }: { pending: boolean }) => {
   return (
@@ -41,6 +42,7 @@ export default function BioForm({ setState, setPage }: Props) {
   const [loading, setLoading] = useState(false);
   const [formState, setFormState] = useState<SignupFormCombinedState>(undefined);
   const formData = useContext(signupContext);
+  const router = useRouter();
 
   useEffect(() => {
     firstField.current?.focus();
@@ -51,42 +53,50 @@ export default function BioForm({ setState, setPage }: Props) {
     defaultValues: useMemo(() => formData, [formData]),
   });
 
+  useEffect(() => {
+    form.reset(formData);
+  }, [form, formData]);
+
   const handleSubmit = async (e?: BaseSyntheticEvent) => {
     if (loading) return;
     setLoading(true);
-    await form.handleSubmit(
-      async (e) => {
-        // check re-password in submit since zod resolver cannot handle custom errors
-        if (e.password !== e.rePassword) {
-          console.error('Password mismatch!');
-          setFormState({
-            success: false,
-            formErrors: ['An unexpected error occured! Try refreshing the page.'],
-          });
-          return;
+    try {
+      await form.handleSubmit(
+        async (e) => {
+          // check re-password in submit since zod resolver cannot handle custom errors
+          if (e.password !== e.rePassword) {
+            console.error('Password mismatch!');
+            setFormState({
+              success: false,
+              formErrors: ['An unexpected error occured! Try refreshing the page.'],
+            });
+            return;
+          }
+
+          const state = await bioStage(e);
+          if (state?.success) {
+            router.push("/");
+            return;
+          } else {
+            setFormState(state);
+          }
+        },
+        (e) => {
+          console.error(e);
+          if (!!e.email || !!e.password || !!e.rePassword) {
+            setFormState({
+              success: false,
+              formErrors: ['An unexpected error occured! Try refreshing the page.'],
+            });
+          }
         }
-
-        console.log('made it');
-
-        // const state = await passwordStage(e);
-        // setFormState(state);
-        // if (state?.success) {
-        //   console.log("yeaaaa");
-
-        //   setState(e);
-        //   setPage(1);
-        // }
-      },
-      (e) => {
-        console.error(e);
-        if (!!e.email || !!e.password || !!e.rePassword) {
-          setFormState({
-            success: false,
-            formErrors: ['An unexpected error occured! Try refreshing the page.'],
-          });
-        }
-      }
-    )(e);
+      )(e);
+    } catch (e) {
+      setFormState({
+        success: false,
+        formErrors: ['An unexpected error occured! ' + (e as any).toString()],
+      });
+    }
     setLoading(false);
   };
 
@@ -97,17 +107,23 @@ export default function BioForm({ setState, setPage }: Props) {
     return () => subscription.unsubscribe();
   }, [form]);
 
-  const handleImageError = (error: string) => {
-    setFormState({
-      success: false,
-      formErrors: [error],
-    });
-  };
+  const handleImageError = useCallback(
+    () => (error: string) => {
+      setFormState({
+        success: false,
+        formErrors: [error],
+      });
+    },
+    []
+  );
 
-  const handleCustomAvatar = (isCustom: boolean, imageString: string) => {
-    form.setValue('customAvatar', isCustom);
-    form.setValue('avatar', imageString);
-  };
+  const handleCustomAvatar = useCallback(
+    (isCustom: boolean, imageString: string) => {
+      form.setValue('customAvatar', isCustom);
+      form.setValue('avatar', imageString);
+    },
+    [form]
+  );
 
   return (
     <Form {...form}>
@@ -119,7 +135,7 @@ export default function BioForm({ setState, setPage }: Props) {
             render={({ field }) => (
               <FormControl>
                 <FormItem>
-                  <Input type="hidden" className="hidden" {...field} value={formData.email ?? ''} />
+                  <Input type="hidden" className="hidden" {...field} />
                 </FormItem>
               </FormControl>
             )}
@@ -130,7 +146,7 @@ export default function BioForm({ setState, setPage }: Props) {
             render={({ field }) => (
               <FormControl>
                 <FormItem>
-                  <Input type="hidden" className="hidden" {...field} value={formData.password ?? ''} />
+                  <Input type="hidden" className="hidden" {...field} />
                 </FormItem>
               </FormControl>
             )}
@@ -141,35 +157,29 @@ export default function BioForm({ setState, setPage }: Props) {
             render={({ field }) => (
               <FormControl>
                 <FormItem>
-                  <Input type="hidden" className="hidden" {...field} value={formData.rePassword ?? ''} />
+                  <Input type="hidden" className="hidden" {...field} />
                 </FormItem>
               </FormControl>
             )}
           />
           <FormField
             control={form.control}
-            name="rePassword"
+            name="customAvatar"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input type="checkbox" className="hidden" {...field} checked={!!formData.customAvatar} />
+                  <Input type="checkbox" className="hidden" {...form.register('customAvatar')} />
                 </FormControl>
               </FormItem>
             )}
           />
-          {/* <input
-            type="checkbox"
-            className="hidden"
-            name="customAvatar"
-            defaultChecked={!!formData.customAvatar}
-          /> */}
           <FormField
             control={form.control}
             name="avatar"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input type="hidden" className="hidden" {...field} value={formData.avatar ?? ''} />
+                  <Input type="hidden" className="hidden" {...field} />
                 </FormControl>
               </FormItem>
             )}
