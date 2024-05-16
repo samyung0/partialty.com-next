@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -74,14 +75,14 @@ export const Footer = () => {
                 <h3 className="text-sm font-semibold leading-6 text-white">Resources</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <a href="/catalog/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/catalog" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Courses
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/catalog/?type=guide" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/catalog?type=guide" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Guides
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -97,14 +98,14 @@ export const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/faq/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/faq" className="text-sm leading-6 text-gray-300 hover:text-white">
                       FAQ
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/donate/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/donate" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Donate
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -114,19 +115,19 @@ export const Footer = () => {
                 <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <a href="/cookie-policy/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/cookie-policy" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Cookie Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/privacy/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/privacy" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Privacy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/terms/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/terms" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Terms
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -134,19 +135,19 @@ export const Footer = () => {
                 <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <a href="/contact/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/contact" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Contact Me
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/suggestion/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/suggestion" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Make Suggestions
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/contribute/" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link prefetch href="/contribute" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Contribute
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

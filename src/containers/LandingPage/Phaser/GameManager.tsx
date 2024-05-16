@@ -41,7 +41,7 @@ export default forwardRef<IRefPhaserGame, IProps>(function PhaserGame({ currentA
   const debounce = useDebouncedCallback(resize, 500);
 
   const init = useCallback(() => {
-    if ((window as any).newGame || !!events) return;
+    // if ((window as any).newGame || !!events) return;
     console.log('init phaser');
     setEvents(new window.Phaser.Events.EventEmitter());
 
@@ -252,25 +252,34 @@ export default forwardRef<IRefPhaserGame, IProps>(function PhaserGame({ currentA
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (window as any).newGame;
-  }, [events, ref]);
+  }, [events, ref, setSprite]);
 
   useEffect(() => {
-    if (loadedScript) return;
+    let newGame: Phaser.Game | null = null;
+    if (loadedScript || (window as any).LOADED_PHASER) {
+      if ((!game || !(window as any).newGame) && !(window as any).INITIALLOADED_PHASER) {
+        newGame = init() ?? null;
+      }
+      return;
+    }
     setLoadedScript(true);
+    (window as any).LOADED_PHASER = true;
+    (window as any).INITIALLOADED_PHASER = true;
     console.log('load phaser');
     const script = document.createElement('script');
     script.src = '/script/phaser.min.js';
-    let newGame: Phaser.Game | null = null;
     script.onload = () => {
       newGame = init() ?? null;
+      (window as any).INITIALLOADED_PHASER = false;
     };
     document.body.append(script);
 
     return () => {
       newGame?.destroy(true);
       setGame(null);
+      (window as any).newGame = null;
     };
-  }, [init, loadedScript]);
+  }, [init, loadedScript, game]);
 
   useEffect(() => {
     if (!game) return;

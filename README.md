@@ -3,7 +3,7 @@
 
 We are using the canary version of Next JS to utilize the partial prerendering feature.
 However, there is a bug with using canary Next with React 18 with the ref props. See this [issue](https://github.com/radix-ui/primitives/issues/2769)
-It causes framer motion to not persist the animated state on an SPA navigation from our testing. The implication is that you should NEVER do a SPA navgiation to a page with a framer motion animated element that starts animation at component mount. We can solve this issue by downgrading the Next JS to stable releases but we loses the benefit of PPR. If we switch the runtime to edge, we run into another issue of not being able to use the cloudinary Node SDK. We will need to fallback to unsigned API endpoints fetching (the delete API requires manually generating signatures which is painful to deal with).
+It causes framer motion to not persist the animated state on an SPA navigation from our testing. The implication is that you should NEVER do a SPA navgiation to a page with a motion.div element. To solve this we call the useAnimate and animate inside an useEffect instead of using motion.div (we are unable to animate transform tho). We can also downgrade the Next JS to stable releases but we loses the benefit of PPR. If we switch the runtime to edge, we run into another issue of not being able to use the cloudinary Node SDK. We will need to fallback to unsigned API endpoints fetching (the delete API requires manually generating signatures which is painful to deal with).
 
 Upgrading to React 19 should fix the compatibility issue with Next Canary but framer motion is not compatibile with React 19.
 

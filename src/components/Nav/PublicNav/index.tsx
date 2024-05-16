@@ -26,9 +26,9 @@ export const PublicNav = () => {
           <div className="inline-flex w-[250px] items-center gap-2">
             <Image src={'/svg/partialty.svg'} width="15" height="15" alt="icon" />
             <h2 className="font-mosk text-lg tracking-wide">
-              <a href="/">
+              <Link prefetch href="/">
                 Partialty.com
-              </a>
+              </Link>
             </h2>
           </div>
           <div className="inline-flex items-center gap-8">
