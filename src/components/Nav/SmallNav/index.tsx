@@ -24,9 +24,9 @@ export const SmallNav = ({
           <div className="inline-flex w-[250px] items-center gap-2">
             <Image src={'/svg/partialty.svg'} width="15" height="15" alt="icon" />
             <h2 className="font-mosk text-lg tracking-wide">
-              <Link href="/" prefetch>
+              <a href="/">
                 Partialty.com
-              </Link>
+              </a>
             </h2>
           </div>
           <button

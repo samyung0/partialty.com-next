@@ -31,7 +31,7 @@ export const BioFormCombinedSchema = z.object({
     .min(8, 'Too short, make it at least 8 charcacters.')
     .max(36, 'Too long, limit it to 36 characters.'),
   rePassword: z.string().trim().min(1, 'Gotta re-enter your password.'),
-  avatar: z.string(),
+  avatar: z.string().min(1, "Uh oh. Seemes like your profile pic is corrupted."),
   nickname: z.string().trim().min(1, 'Make yourself a nice nickname.').max(50, 'Too long, limit it to 50 characters.'),
   customAvatar: z.boolean(),
 });

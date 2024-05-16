@@ -6,7 +6,6 @@ import { type z } from 'zod';
 import { type BioFormCombinedSchema } from '~/definition/signup';
 import BioForm from './BioForm';
 import { MoveLeft } from 'lucide-react';
-import { testAction } from '~/server/test';
 
 interface Props {
   setState: (values: Partial<z.infer<typeof BioFormCombinedSchema>>) => any;

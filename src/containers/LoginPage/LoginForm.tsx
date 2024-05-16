@@ -55,7 +55,7 @@ export default function LoginForm() {
       await form.handleSubmit(async (e) => {
         const state = await login(e);
         if (state?.success) {
-          router.push('/');
+          router.push('/members/dashboard'); // IMPORTANT: animations break with framer motion and current phaser setup when SPA navigation occurs
           return;
         } else {
           setFormState(state);

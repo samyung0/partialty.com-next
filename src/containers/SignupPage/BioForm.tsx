@@ -13,7 +13,7 @@ import { defaultSignupValue, signupContext } from '~/context/SignupContext';
 import { BioFormCombinedSchema, PasswordFormSchema, type SignupFormCombinedState } from '~/definition/signup';
 import { bioStage, passwordStage } from '~/server/profiles';
 import SignupDnd from './SignupDnd';
-import { redirect, useRouter } from 'next/navigation';
+import {  useRouter } from 'next/navigation';
 
 const SignupButton = ({ pending }: { pending: boolean }) => {
   return (
@@ -75,7 +75,7 @@ export default function BioForm({ setState, setPage }: Props) {
 
           const state = await bioStage(e);
           if (state?.success) {
-            router.push("/");
+            router.push('/members/dashboard');
             return;
           } else {
             setFormState(state);

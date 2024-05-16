@@ -1,6 +1,6 @@
 export default function CookiePolicyPage() {
   return (
-    <main className="prose mx-auto max-w-7xl dark:prose-invert">
+    <main className="prose mx-auto max-w-7xl px-4 dark:prose-invert md:px-8">
       <div data-custom-class="body">
         <div>
           <strong>

@@ -4,13 +4,10 @@ import { default as NextImage } from 'next/image';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'sonner';
-import { z } from 'zod';
 import { Skeleton } from '~/components/Skeleton';
 import { CLOUDINARY_MAX_IMG_SIZE } from '~/const/cloudinaryUpload';
 
 import defaultProfilePicsUrl from '~/const/defaultProfilePicsUrl';
-import { signupContext } from '~/context/SignupContext';
-import { BioFormCombinedSchema } from '~/definition/signup';
 import { cn } from '~/lib/utils';
 
 interface Props {
@@ -45,7 +42,7 @@ export default function SignupDnd({ error, setCustomAvatar }: Props) {
 
   useEffect(() => {
     setAvatar(defaultProfilePicsUrl[avatarIndex]);
-    setCustomAvatar(false, defaultProfilePicsUrl[avatarIndex] ?? "")
+    setCustomAvatar(false, defaultProfilePicsUrl[avatarIndex] ?? '');
   }, [avatarIndex, setCustomAvatar]);
 
   const onDrop = useCallback(
