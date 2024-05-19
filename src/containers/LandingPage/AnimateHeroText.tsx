@@ -22,20 +22,14 @@ export default function AnimateHeroText({ HeroText }: { HeroText: React.ReactNod
   }, [animate, scope]);
 
   return (
-    <div
+    <motion.div
       ref={scope}
-      className="opacity-0"
-      // initial={{
-      //   opacity: 0,
-      //   y: 20,
-      // }}
-      // animate={{
-      //   opacity: 1,
-      //   y: 0,
-      // }}
-      // transition={spring}
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
     >
       {HeroText}
-    </div>
+    </motion.div>
   );
 }
